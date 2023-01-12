@@ -33,7 +33,7 @@ jobs:
           REF: ${{ github.ref }}
         run: |
           BRANCH=release-${{ steps.bump_version.outputs.tag }}
-          git config --local user.email "ci@skyrealmde.com"
+          git config --local user.email "ci@skyrealm.de"
           git config --local user.name "skyrealmde CI"
           git checkout -b $BRANCH
           git push -u origin $BRANCH
