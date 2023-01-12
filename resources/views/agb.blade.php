@@ -1,16 +1,14 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <img src="{{ asset('assets/banner.png') }}" alt="Banner Image" class="w-full rounded-lg">
+            <img src="{{ asset('assets/agb.png') }}" alt="Banner Image" class="w-full rounded-lg">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <p>&nbsp;</p>
 
                     <h2><span style="color:#ffffff">Vertragspartner</span></h2>
 
-                    <p><span style="color:#ffffff">Auf Grundlage dieser Allgemeine</span></p>
-
-                    <p><span style="color:#ffffff">n Gesch&auml;ftsbedingungen (AGB) kommt zwischen dem Kunden und<br />
+                    <p><span style="color:#ffffff">Auf Grundlage dieser Allgemeinen Gesch&auml;ftsbedingungen (AGB) kommt zwischen dem Kunden und<br />
 Melion Coding Benjamin Chytry Einzelunternehmen<br />
 Vertreten durch Benjamin Chytry<br />
 Adresse: Am Kohlbrunnen 4 85095 Denkendorf<br />

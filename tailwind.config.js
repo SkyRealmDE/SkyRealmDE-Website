@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -28,7 +29,15 @@ module.exports = {
                 700: '#181818',
                 800: '#121212',
                 900: '#0f0f0f',
-            }
+            },
+            transparent: 'transparent',
+            current: 'currentColor',
+            black: colors.black,
+            emerald: colors.emerald,
+            indigo: colors.indigo,
+            yellow: colors.yellow,
+            green: colors.green,
+            orange: colors.orange,
         }
     },
 

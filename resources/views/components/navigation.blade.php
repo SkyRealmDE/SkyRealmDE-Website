@@ -17,7 +17,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <img class="block h-32 w-auto" src="/android-chrome-512x512.png" alt="SkyRealmDE">
                 </div>
-                <div class="hidden sm:block sm:ml-6">
+                <div class="hidden sm:block sm:ml-6 w-full">
                     <div class="flex justify-start md:justify-between">
                         <div>
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
