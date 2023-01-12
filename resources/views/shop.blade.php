@@ -80,12 +80,12 @@
                                 <div class="mt-6">
                                     <div class="rounded-md shadow flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-300">
                                         <button
-                                            class=""
                                             data-sellix-product="63bfde51424fd"
                                             type="submit"
-                                            alt="Buy Now with sellix.io"
+                                            alt="Jetzt kaufen"
+                                            disabled
                                         >
-                                            Jetzt kaufen
+                                            Bald verfügbar
                                         </button>
                                     </div>
                                 </div>
