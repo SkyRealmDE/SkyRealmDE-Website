@@ -15,6 +15,12 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@skyrealmde">
+        <meta name="twitter:title" content="SkyRealmDE">
+        <meta name="twitter:description" content="SkyRealm ist ein deutscher SkyBlock Server, mit Fokus auf die neusten Minecraft Java-Edition Versionen.">
+        <meta name="twitter:image" content="https://skyrealm.de/assets/banner.png">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
         <link rel="preconnect" href="https://fonts.googleapis.com">
