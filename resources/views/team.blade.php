@@ -17,7 +17,7 @@
                                 <dl class="mt-1 flex-grow flex flex-col justify-between">
                                     <dt class="sr-only">Rang</dt>
                                     <dd class="mt-3">
-                                        <span class="px-2 py-1 text-white text-xs font-medium bg-green-600 rounded-full">{{ $user->rank }}</span>
+                                        <span class="px-2 py-1 text-white text-xs font-medium rounded-full" style="background-color: {{ $user->color }}">{{ $user->rank }}</span>
                                     </dd>
                                 </dl>
                             </div>
