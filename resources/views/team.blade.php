@@ -17,7 +17,7 @@
                                 <dl class="mt-1 flex-grow flex flex-col justify-between">
                                     <dt class="sr-only">Rang</dt>
                                     <dd class="mt-3">
-                                        <span class="px-2 py-1 text-white text-xs font-medium bg-green-600 rounded-full">{{ $user->rank }}</span>
+                                        <span class="px-2 py-1 text-white text-xs font-medium rounded-full" style="background-color: {{ $user->color }}">{{ $user->rank }}</span>
                                     </dd>
                                 </dl>
                             </div>
@@ -27,6 +27,12 @@
                                         <a href="https://de.namemc.com/profile/{{$user->uuid}}" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-white font-medium border border-transparent rounded-bl-lg hover:text-gray-100">
                                             <i class="fa-solid fa-signature"></i>
                                             <span class="ml-3">NameMC</span>
+                                        </a>
+                                    </div>
+                                    <div class="-ml-px w-0 flex-1 flex">
+                                        <a href="/stats/{{$user->uuid}}" class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-white font-medium border border-transparent rounded-br-lg hover:text-gray-100">
+                                            <i class="fa-duotone fa-chart-simple"></i>
+                                            <span class="ml-3">Stats</span>
                                         </a>
                                     </div>
                                 </div>

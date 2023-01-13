@@ -18,17 +18,27 @@ class TeamController extends Controller
 
         $team = DB::select('SELECT `uuid`, `username`, `primary_group` FROM luckperms_players WHERE `primary_group` != "default"');
 
-        $rankWeights = DB::select('SELECT `name`, `permission` FROM luckperms_group_permissions WHERE `permission` LIKE "weight.%"');
+        $prefixPermission = DB::select('SELECT `name`, `permission` FROM luckperms_group_permissions WHERE `permission` LIKE "prefix.%"');
 
-        $rankWeights = array_map(function ($rankWeight) {
-            $rankWeight->permission = Str::replace('weight.', '', $rankWeight->permission);
-            return $rankWeight;
-        }, $rankWeights);
+        $prefixPermission = array_map(function ($permObj) {
+            $splitted = explode(".", $permObj->permission);
+            $permObj->weight = $splitted[1];
+            preg_match('/<(?<color>#[a-f0-9]{6})>(?<rank>.*)/', $splitted[2], $matches);
+            $permObj->prefix = $matches['rank'];
+            $permObj->color = $matches['color'];
+            return $permObj;
+        }, $prefixPermission);
 
-        $rankWeights = array_column($rankWeights, 'permission', 'name');
+        $prefixPermission = array_reduce($prefixPermission, function ($carry, $item) {
+            $carry[$item->name] = $item;
+            return $carry;
+        }, []);
 
-        $team = array_map(function ($member) use ($rankWeights) {
-            $member->rankWeight = $rankWeights[$member->primary_group];
+        $team = array_map(function ($member) use ($prefixPermission) {
+            $permObj = $prefixPermission[$member->primary_group];
+            $member->rankWeight = $permObj->weight;
+            $member->rankPrefix = $permObj->prefix;
+            $member->color = $permObj->color;
             $member->rank = Str::title($member->primary_group);
             $member->name = Str::title($member->username);
             return $member;
