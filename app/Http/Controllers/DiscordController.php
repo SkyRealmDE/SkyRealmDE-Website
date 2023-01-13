@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Discord\Embed;
 use App\Models\Discord\Webhook;
+use Exception;
 use Illuminate\Http\Request;
 
 class DiscordController extends Controller
@@ -16,16 +17,19 @@ class DiscordController extends Controller
     }
 
 
+    /**
+     * @throws Exception
+     */
     private function sendWebhook(Request $request) {
         $embed = new Embed();
         $embed->setTitle('Website Benachrichtigung 🌶️');
-        $embed->setDescription('Es wurde ein Test-Login empfangen.\nDaten wurden gespeichert und übertragen.');
+        $embed->setDescription('Es wurde ein Test-Login empfangen. Daten wurden gespeichert und übertragen.');
         $embed->setURL('https://skyrealm.de');
         $embed->setColor(hexdec('badc58'));
         $embed->setFooter('Powered by SkyRealmDE ❤️', 'https://skyrealm.de/android-chrome-512x512.png');
         $embed->setTimestamp(date('c', strtotime('now')));
-        $embed->setThumbnail('https://skyrealm.de/android-chrome-512x512.png');
-        $embed->addField('=+= User', '```' . $request->ip() . '\n' . $request->userAgent() . '```', true);
+        $embed->addField('=+= IP', '```' . $request->ip() . '```', false);
+        $embed->addField('=+= User-Agent', '```' . $request->userAgent() . '```', false);
 
         $hook = new Webhook();
         $hook->setEmbed($embed);
