@@ -26,4 +26,7 @@ Route::get('/agb', function () { return view('agb'); });
 Route::get('/datenschutz', function () { return view('datenschutz'); });
 
 
+Route::get('/testWebhook', [DiscordController::class, 'testWebhook']);
+
+
 require __DIR__.'/auth.php';
