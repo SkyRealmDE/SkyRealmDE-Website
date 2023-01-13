@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DiscordController;
+use App\Http\Controllers\JobsController;
 use App\Http\Controllers\StatistkenController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,7 @@ Route::get('/stats', [StatistkenController::class, 'index']);
 Route::get('/stats/{uuid}', [StatistkenController::class, 'userStats']);
 Route::get('/team', [TeamController::class, 'index']);
 Route::get('/regelwerk', function () { return view('rules'); });
+Route::get('/jobs', [JobsController::class, 'index']);
 
 Route::get('/impressum', function () { return view('impressum'); });
 Route::get('/agb', function () { return view('agb'); });
