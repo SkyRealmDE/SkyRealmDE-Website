@@ -13,11 +13,11 @@
                         <li class="col-span-1 flex flex-col text-center bg-gray-700 rounded-lg shadow divide-y divide-gray-200">
                             <div class="flex-1 flex flex-col p-8">
                                 <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://visage.surgeplay.com/bust/{{$user->uuid}}" alt="">
-                                <h3 class="mt-6 text-white text-sm font-medium">{{ $user->username }}</h3>
+                                <h3 class="mt-6 text-white text-sm font-medium">{{ $user->name }}</h3>
                                 <dl class="mt-1 flex-grow flex flex-col justify-between">
-                                    <dt class="sr-only">Role</dt>
+                                    <dt class="sr-only">Rang</dt>
                                     <dd class="mt-3">
-                                        <span class="px-2 py-1 text-white text-xs font-medium bg-green-600 rounded-full">Team</span>
+                                        <span class="px-2 py-1 text-white text-xs font-medium bg-green-600 rounded-full">{{ $user->rank }}</span>
                                     </dd>
                                 </dl>
                             </div>
