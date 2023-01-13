@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DiscordController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ Route::get('/', function () { return view('home'); });
 
 Route::get('/shop', function () { return view('shop'); });
 Route::get('/stats', function () { return view('stats'); });
-Route::get('/team', function () { return view('team'); });
+Route::get('/team', [TeamController::class, 'index']);
 Route::get('/regelwerk', function () { return view('rules'); });
 
 Route::get('/impressum', function () { return view('impressum'); });
