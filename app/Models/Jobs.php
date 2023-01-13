@@ -8,6 +8,8 @@ class Jobs extends Model {
 
     protected $table = 'web_jobs';
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'title',
         'description',
@@ -18,7 +20,6 @@ class Jobs extends Model {
         'color'
     ];
 
-    // tag1:tag2:tag3
     public function getTagsAttribute() {
         return explode(':', $this->attributes['tags']);
     }

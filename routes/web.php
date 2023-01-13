@@ -25,6 +25,7 @@ Route::get('/stats/{uuid}', [StatistkenController::class, 'userStats']);
 Route::get('/team', [TeamController::class, 'index']);
 Route::get('/regelwerk', function () { return view('rules'); });
 Route::get('/jobs', [JobsController::class, 'index']);
+Route::get("/jobs/{id}", [JobsController::class, 'byId']);
 
 Route::get('/impressum', function () { return view('impressum'); });
 Route::get('/agb', function () { return view('agb'); });
