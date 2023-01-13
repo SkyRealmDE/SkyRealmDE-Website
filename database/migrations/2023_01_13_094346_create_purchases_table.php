@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
+            $table->string('sellix_id');
+            $table->string('status');
             $table->timestamps();
         });
     }
