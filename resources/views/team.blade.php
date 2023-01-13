@@ -29,6 +29,12 @@
                                             <span class="ml-3">NameMC</span>
                                         </a>
                                     </div>
+                                    <div class="-ml-px w-0 flex-1 flex">
+                                        <a href="/stats/{{$user->uuid}}" class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-white font-medium border border-transparent rounded-br-lg hover:text-gray-100">
+                                            <i class="fa-duotone fa-chart-simple"></i>
+                                            <span class="ml-3">Stats</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
