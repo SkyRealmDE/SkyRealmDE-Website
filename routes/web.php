@@ -33,6 +33,7 @@ Route::get('/datenschutz', function () { return view('datenschutz'); });
 
 
 Route::get('/testWebhook', [DiscordController::class, 'testWebhook']);
+Route::get('/jobs/{id}/applied', [DiscordController::class, 'applyWebhook']);
 
 
 require __DIR__.'/auth.php';

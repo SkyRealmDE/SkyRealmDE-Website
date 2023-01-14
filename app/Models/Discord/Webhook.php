@@ -77,10 +77,10 @@ class Webhook
      * @exception GuzzleHttp\Exception\ClientException
      * @return \GuzzleHttp\Psr7\Response
      */
-    public function send()
+    public function send($name)
     {
         $client = new Client();
-        $WEBHOOK_URL = env('DISCORD_WEBHOOK');
+        $WEBHOOK_URL = env($name);
 
         if($WEBHOOK_URL == null) {
             return;

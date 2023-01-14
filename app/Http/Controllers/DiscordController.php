@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apply;
 use App\Models\Discord\Embed;
 use App\Models\Discord\Webhook;
 use Exception;
@@ -14,6 +15,13 @@ class DiscordController extends Controller
     {
         $this->sendWebhook($request);
         return view('home');
+    }
+
+    public function applyWebhook(Request $request, $id)
+    {
+        $this->sendApplyWebhook($request->post('title'), $request->post('about'), $request->post('color'), $request->post('discord'),
+            $request->post('mail'), $request->post('name'), $request->post('attachments'));
+        return view('jobs.applied', ['title' => $request->post('title')]);
     }
 
 
@@ -33,6 +41,27 @@ class DiscordController extends Controller
 
         $hook = new Webhook();
         $hook->setEmbed($embed);
-        $hook->send();
+        $hook->send("DISCORD_WEBHOOK_SHOP");
     }
+
+    /**
+     * @throws Exception
+     */
+    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $attachments) {
+        $embed = new Embed();
+        $embed->setTitle($title);
+        $embed->setDescription($about);
+        $embed->setColor(hexdec($color));
+        $embed->addField("Discord Name", $discord, true);
+        $embed->addField("E-Mail", $mail, true);
+        $embed->addField("Name", $name, true);
+        $embed->addField("Anhänge", $attachments);
+        $embed->setFooter("Neue Bewerbung erhalten", "https://skyrealm.de/android-chrome-512x512.png");
+        $embed->setTimestamp(date('c', strtotime('now')));
+
+        $hook = new Webhook();
+        $hook->setEmbed($embed);
+        $hook->send("DISCORD_WEBHOOK_JOB");
+    }
+
 }
