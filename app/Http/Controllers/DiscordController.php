@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Apply;
 use App\Models\Discord\Embed;
 use App\Models\Discord\Webhook;
 use Exception;
@@ -17,7 +16,7 @@ class DiscordController extends Controller
         return view('home');
     }
 
-    public function applyWebhook(Request $request, $id)
+    public function applyWebhook(Request $request)
     {
         $this->sendApplyWebhook($request->post('title'), $request->post('about'), $request->post('color'), $request->post('discord'),
             $request->post('mail'), $request->post('name'), $request->post('attachments'));

@@ -16,7 +16,7 @@
                         <ul role="list" class="divide-y divide-gray-100">
                             @foreach($openJobs as $job)
                             <li>
-                                <a href="{{ $job->id }}" class="block hover:bg-gray-700 transition">
+                                <a href="jobs/{{ $job->id }}" class="block hover:bg-gray-700 transition">
                                     <div class="px-4 py-4 sm:px-6">
                                         <div class="flex items-center justify-between mb-4">
                                             <p class="text-sm font-black text-[18px] truncate" style="color: {{ $job->color }}">{{ $job->title }}</p>
