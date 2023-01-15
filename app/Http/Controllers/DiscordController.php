@@ -56,7 +56,7 @@ class DiscordController extends Controller
         $embed->addField("Discord Name", $discord, true);
         $embed->addField("E-Mail", $mail, true);
         $embed->addField("Name", $name, true);
-        $embed->addField("Anhänge", $attachments, true);
+        $embed->addField("Anhänge", !empty($attachments) ? $attachments : "Nicht gesetzt", true);
         $embed->setFooter("Neue Bewerbung erhalten", "https://skyrealm.de/android-chrome-512x512.png");
         $embed->setTimestamp(date('c', strtotime('now')));
 
