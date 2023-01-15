@@ -52,11 +52,11 @@ class DiscordController extends Controller
         $embed = new Embed();
         $embed->setTitle($title);
         $embed->setDescription($about);
-        $embed->setColor(hexdec($color));
+        $embed->setColor(hexdec(str_replace('#', '', $color)));
         $embed->addField("Discord Name", $discord, true);
         $embed->addField("E-Mail", $mail, true);
         $embed->addField("Name", $name, true);
-        $embed->addField("Anhänge", $attachments);
+        $embed->addField("Anhänge", $attachments, true);
         $embed->setFooter("Neue Bewerbung erhalten", "https://skyrealm.de/android-chrome-512x512.png");
         $embed->setTimestamp(date('c', strtotime('now')));
 
