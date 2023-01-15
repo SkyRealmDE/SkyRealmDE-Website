@@ -50,7 +50,7 @@ class DiscordController extends Controller
      */
     private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $attachments) {
         $embed = new Embed();
-        $embed->setTitle($title);
+        $embed->setTitle($name." hat sich als ".$title." beworben");
         $embed->setDescription($about);
         $embed->setColor(hexdec(str_replace('#', '', $color)));
         $embed->addField("Discord Name", $discord, true);

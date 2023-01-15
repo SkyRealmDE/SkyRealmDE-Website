@@ -6,10 +6,11 @@
                 <div class="p-6 text-white">
                     <h1 class="font-sans text-4xl" style="color: {{ $job->color }}">{{ $job->title }} - Bewerbung</h1>
                     <br>
-                    <form class="space-y-8 divide-y divide-gray-200" action="/jobs/{{ $job->id }}/applied" method="post">
+                    <p class="font-sans text-gray-100">{{ $job->description }}</p>
+                    <form class="space-y-8" action="/jobs/{{ $job->id }}/applied" method="post">
                         @csrf
                         <div class="space-y-8 divide-y divide-gray-200">
-                            <p class="font-sans text-gray-100">{{ $job->description }}</p>
+                            <div></div>
                             <div>
                                 <br>
                                 <h1 class="font-sans text-3xl" style="color: {{ $job->color }}">Bewirb dich jetzt für diese Stelle:</h1>
@@ -41,23 +42,6 @@
                                             <textarea required id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-100 bg-gray-700 rounded-md"></textarea>
                                         </div>
                                         <p class="mt-2 text-sm text-gray-100">Schreibe ein paar Sätze über dich.</p>
-                                    </div>
-
-                                    <div class="sm:col-span-6">
-                                        <label for="file-upload" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Anhänge </label>
-                                        <div id="job_upload" class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:cursor-pointer hover:bg-gray-700 transition">
-                                            <div class="space-y-1 text-center">
-                                                <i class="fa-solid fa-file-arrow-up text-gray-100 text-3xl"></i>
-                                                <div class="flex text-sm text-gray-600">
-                                                    <label for="file-upload" class="relative cursor-pointer rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                                                        <span>Lade eine Datei hoch</span>
-                                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                                                    </label>
-                                                    <p class="pl-1 text-gray-100">oder ziehe sie hierher</p>
-                                                </div>
-                                                <p class="text-xs text-gray-100">PNG, JPG, ZIP, DOCX bis zu 10MB</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
