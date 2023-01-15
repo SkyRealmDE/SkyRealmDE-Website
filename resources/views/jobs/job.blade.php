@@ -6,7 +6,8 @@
                 <div class="p-6 text-white">
                     <h1 class="font-sans text-4xl" style="color: {{ $job->color }}">{{ $job->title }} - Bewerbung</h1>
                     <br>
-                    <form class="space-y-8 divide-y divide-gray-200" action="/jobs-applied" method="post">
+                    <form class="space-y-8 divide-y divide-gray-200" action="/jobs/{{ $job->id }}/applied" method="post">
+                        @csrf
                         <div class="space-y-8 divide-y divide-gray-200">
                             <p class="font-sans text-gray-100">{{ $job->description }}</p>
                             <div>

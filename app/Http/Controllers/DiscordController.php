@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Discord\Embed;
 use App\Models\Discord\Webhook;
+use App\Models\Jobs;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -16,11 +17,12 @@ class DiscordController extends Controller
         return view('home');
     }
 
-    public function applyWebhook(Request $request)
+    public function applyWebhook(Request $request, $id)
     {
-        $this->sendApplyWebhook($request->post('title'), $request->post('about'), $request->post('color'), $request->post('discord'),
+        $job = Jobs::all()->find($id);
+        $this->sendApplyWebhook($job->title, $request->post('about'), $job->color, $request->post('discord'),
             $request->post('mail'), $request->post('name'), $request->post('attachments'));
-        return view('jobs.applied', ['title' => $request->post('title')]);
+        return view('jobs.applied', ['title' => $job->title]);
     }
 
 

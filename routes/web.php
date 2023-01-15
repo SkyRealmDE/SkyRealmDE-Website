@@ -25,7 +25,7 @@ Route::get('/stats/{uuid}', [StatistkenController::class, 'userStats']);
 Route::get('/team', [TeamController::class, 'index']);
 Route::get('/regelwerk', function () { return view('rules'); });
 Route::get('/jobs', [JobsController::class, 'index']);
-Route::get('/jobs-applied', [DiscordController::class, 'applyWebhook']);
+Route::post('/jobs/{id}/applied', [DiscordController::class, 'applyWebhook']);
 Route::get("/jobs/{id}", [JobsController::class, 'byId']);
 
 Route::get('/impressum', function () { return view('impressum'); });
