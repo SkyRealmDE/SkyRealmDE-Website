@@ -23,7 +23,7 @@
                             <img class="h-8" src="{{ asset('assets/partners/netcup.svg') }}" alt="Netcup">
                         </div>
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                            <img class="h-8" src="{{ asset('assets/partners/epidemicsound.svg') }}" alt="Epidemic Sound">
+                            <img class="h-8" src="{{ asset('assets/partners/devsky.svg') }}" alt="DevSky <3">
                         </div>
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                             <img class="h-8" src="{{ asset('assets/partners/tcpshield.svg') }}" alt="TCPShield">
