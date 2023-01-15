@@ -55,7 +55,7 @@ class DiscordController extends Controller
         $embed->addField("=+= Discord", "```$discord```");
         $embed->addField("=+= E-Mail", "```$mail```");
         $embed->addField("=+= Name", "```$name```");
-        $embed->addField("=+= Über mich", "```$about```");
+        $embed->addField("=+= Über mich", "```".PHP_EOL."$about```");
         $embed->setFooter("Neue Bewerbung erhalten", "https://skyrealm.de/android-chrome-512x512.png");
         $embed->setTimestamp(date('c', strtotime('now')));
 
