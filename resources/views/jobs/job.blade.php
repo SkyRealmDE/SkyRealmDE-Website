@@ -10,7 +10,17 @@
                     <form class="space-y-8" action="/jobs/{{ $job->id }}/applied" method="post">
                         @csrf
                         <div class="space-y-8 divide-y divide-gray-200">
-                            <div></div>
+                            <div>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            </div>
                             <div>
                                 <br>
                                 <h1 class="font-sans text-3xl" style="color: {{ $job->color }}">Bewirb dich jetzt für diese Stelle:</h1>
@@ -62,6 +72,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAAACATeeFHjeB6MSH"></div>
                         </div>
 
                         <div class="pt-5">
@@ -74,4 +85,5 @@
             </div>
         </div>
     </div>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </x-app-layout>

@@ -19,6 +19,39 @@ class DiscordController extends Controller
 
     public function applyWebhook(Request $request, $id)
     {
+
+        // Check if cf-turnstile-response is valid
+        if (!$request->has('cf-turnstile-response')) {
+            return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+        }
+
+        $recaptcha_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+        $recaptcha_secret = env('CFCAPTCHA_SECRET');
+        $recaptcha_response = $request->post('cf-turnstile-response');
+
+        // Make and decode POST request:
+        $data = array('secret' => $recaptcha_secret, 'response' => $recaptcha_response);
+
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($recaptcha_url, false, $context);
+        if ($result === FALSE) { /* Handle error */ }
+
+        $recaptcha = $result;
+        $recaptcha = json_decode($recaptcha);
+        //print_r($recaptcha);
+        // Take action based on the score returned:
+        if (!$recaptcha->success) {
+            return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+        }
+
         $job = Jobs::all()->find($id);
         $this->sendApplyWebhook($job->title, $request->post('about'), $job->color, $request->post('discord'),
             $request->post('mail'), $request->post('name'));
@@ -55,7 +88,7 @@ class DiscordController extends Controller
         $embed->addField("=+= Discord", "```$discord```");
         $embed->addField("=+= E-Mail", "```$mail```");
         $embed->addField("=+= Name", "```$name```");
-        $embed->addField("=+= Über mich", "```$about```");
+        $embed->addField("=+= Über mich", "```".PHP_EOL."$about```");
         $embed->setFooter("Neue Bewerbung erhalten", "https://skyrealm.de/android-chrome-512x512.png");
         $embed->setTimestamp(date('c', strtotime('now')));
 
