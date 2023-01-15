@@ -1,5 +1,4 @@
 <x-app-layout>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <img src="{{ asset('assets/jobs.png') }}" alt="Banner Image" class="w-full rounded-lg">
