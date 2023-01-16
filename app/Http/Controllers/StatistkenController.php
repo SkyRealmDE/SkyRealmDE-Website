@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PlayerStatistics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -25,6 +26,8 @@ class StatistkenController extends Controller
             preg_match('/<(?<color>#[a-f0-9]{6})>(?<rank>.*)/', $splitted[2], $matches);
             $user->prefix = $matches['rank'];
             $user->color = $matches['color'];
+
+            $user->statistics = new PlayerStatistics($user->uuid);
             return $user;
         }, $topUsers);
 
@@ -44,6 +47,7 @@ class StatistkenController extends Controller
         $user = (object) array_merge((array) $userLP, (array) $userRealm);
         $user->rank = Str::title($user->primary_group);
         $user->name = Str::title($user->username);
+        $user->statistics = new PlayerStatistics($uuidAsUUID);
 
 
         return view('stats.userstats', ['user' => $user]);
