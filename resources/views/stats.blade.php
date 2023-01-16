@@ -25,6 +25,9 @@
                                         <dd class="mt-3">
                                             <span class="px-2 py-1 text-white text-xs font-medium rounded-full">{{ $user->coins }} Coins</span>
                                         </dd>
+                                        <dd class="mt-3">
+                                            <span class="px-2 py-1 text-white text-xs font-medium rounded-full">{{ $user->statistics->onlineTime }} Onlinezeit</span>
+                                        </dd>
                                     </dl>
                                 </div>
                                 <div>
