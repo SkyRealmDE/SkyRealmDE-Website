@@ -56,9 +56,13 @@ class DiscordController extends Controller
         $this->sendApplyWebhook($job->title, $request->post('about'), $job->color, $request->post('discord'),
             $request->post('mail'), $request->post('name'));
 
-        // Send mail to user using PHPMailer
-        $mail = new MailController();
-        $mail->sendApplyMail($request->post('name'), $request->post('mail'), $job->title);
+        try {
+            // Send mail to user using PHPMailer
+            $mail = new MailController();
+            $mail->sendApplyMail($request->post('name'), $request->post('mail'), $job->title);
+        }catch (Exception $exception) {
+
+        }
 
         return view('jobs.applied', ['title' => $job->title]);
     }
