@@ -53,6 +53,7 @@ class DiscordController extends Controller
         }
 
         $job = Jobs::all()->find($id);
+
         $this->sendApplyWebhook($job->title, $request->post('about'), $job->color, $request->post('discord'),
             $request->post('mail'), $request->post('name'));
 
@@ -61,7 +62,6 @@ class DiscordController extends Controller
             $mail = new MailController();
             $mail->sendApplyMail($request->post('name'), $request->post('mail'), $job->title);
         }catch (Exception $exception) {
-
         }
 
         return view('jobs.applied', ['title' => $job->title]);
