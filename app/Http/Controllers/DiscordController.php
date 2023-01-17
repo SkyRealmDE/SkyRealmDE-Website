@@ -42,7 +42,7 @@ class DiscordController extends Controller
         );
         $context  = stream_context_create($options);
         $result = file_get_contents($recaptcha_url, false, $context);
-        if ($result === FALSE) { /* Handle error */ }
+        if ($result === FALSE) return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
 
         $recaptcha = $result;
         $recaptcha = json_decode($recaptcha);
@@ -55,6 +55,11 @@ class DiscordController extends Controller
         $job = Jobs::all()->find($id);
         $this->sendApplyWebhook($job->title, $request->post('about'), $job->color, $request->post('discord'),
             $request->post('mail'), $request->post('name'));
+
+        // Send mail to user using PHPMailer
+        $mail = new MailController();
+        $mail->sendApplyMail($request->post('name'), $request->post('mail'), $job->title);
+
         return view('jobs.applied', ['title' => $job->title]);
     }
 
