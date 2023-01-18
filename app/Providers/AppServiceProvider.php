@@ -23,12 +23,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot( UrlGenerator $url, Request $request)
+    public function boot(UrlGenerator $url, Request $request)
     {
-
         if ($request->server->get('HTTP_X_FORWARDED_PROTO') == 'https') {
             $url->forceScheme('https');
         }
-
     }
 }

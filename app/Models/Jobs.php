@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jobs extends Model {
-
+class Jobs extends Model
+{
     protected $table = 'web_jobs';
 
     protected $primaryKey = 'id';
@@ -20,8 +20,8 @@ class Jobs extends Model {
         'color'
     ];
 
-    public function getTagsAttribute() {
+    public function getTagsAttribute()
+    {
         return explode(':', $this->attributes['tags']);
     }
-
 }
