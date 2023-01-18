@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 
 class TeamController extends Controller
 {
-
     public function index()
     {
         $teamRanks = DB::selectOne('SELECT `groups` FROM luckperms_tracks WHERE `name` = "team"')->groups;
