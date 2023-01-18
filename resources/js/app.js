@@ -6,3 +6,4 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+document.body.classList.add('dark');
