@@ -5,10 +5,8 @@ namespace App\Models;
 use DateTime;
 use Illuminate\Support\Facades\DB;
 
-
 class PlayerStatistics
 {
-
     private $uniqueId;
     public $damageDealt = 0;
     public $damageTaken = 0;
@@ -43,7 +41,7 @@ class PlayerStatistics
 
     public $asList = [];
 
-    function __construct($uniqueId)
+    public function __construct($uniqueId)
     {
         $this->uniqueId = $uniqueId;
 
@@ -118,7 +116,8 @@ class PlayerStatistics
     }
 
     // Calculate online time (totalOnlineTime is in 1/20 seconds)
-    private function calculateOnlineTime($totalOnlineTime) {
+    private function calculateOnlineTime($totalOnlineTime)
+    {
         $seconds = $totalOnlineTime / 20;
         $minutes = $seconds / 60;
         $hours = $minutes / 60;
