@@ -9,9 +9,8 @@ use Illuminate\Support\Str;
 
 class StatistkenController extends Controller
 {
-
-
-    public function index() {
+    public function index()
+    {
         $topUsers = DB::select('SELECT *, HEX(unique_id) AS uuid FROM `realm_players` ORDER BY `xp` DESC LIMIT 12');
 
         $topUsers = array_map(function ($user) {
@@ -35,12 +34,13 @@ class StatistkenController extends Controller
         return view('stats', ['topUsers' => $topUsers]);
     }
 
-    public function userStats(Request $request, string $uuid) {
+    public function userStats(Request $request, string $uuid)
+    {
         $userLP = DB::selectOne('SELECT * FROM luckperms_players WHERE `uuid` = ?', [$uuid]);
         $uuidAsUUID = str_replace('-', '', $uuid);
         $userRealm = DB::selectOne('SELECT * FROM realm_players WHERE `unique_id` = UNHEX(?)', [$uuidAsUUID]);
 
-        if($userLP == null || $userRealm == null) {
+        if ($userLP == null || $userRealm == null) {
             return view('stats.nouser', ['uuid' => $uuid]);
         }
 
@@ -52,5 +52,4 @@ class StatistkenController extends Controller
 
         return view('stats.userstats', ['user' => $user]);
     }
-
 }

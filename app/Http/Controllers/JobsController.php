@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class JobsController extends Controller
 {
-
-    public function index() {
+    public function index()
+    {
         $jobs = Jobs::all()->filter(function ($job) {
             return $job->active == 1;
         });
@@ -17,7 +17,8 @@ class JobsController extends Controller
         return view('jobs', ['openJobs' => $jobs]);
     }
 
-    public function byId(Request $request, $id) {
+    public function byId(Request $request, $id)
+    {
         $job = Jobs::all()->find($id);
         return view('jobs.job', ['job' => $job]);
     }

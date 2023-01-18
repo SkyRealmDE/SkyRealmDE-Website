@@ -1,6 +1,5 @@
-const images = document.querySelectorAll('img');
+const images = document.querySelectorAll("img");
 
-images.forEach(image => {
+images.forEach((image) => {
     image.draggable = false;
 });
-

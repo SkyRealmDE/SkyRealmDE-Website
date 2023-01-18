@@ -17,20 +17,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('home'); });
+Route::get('/', function () {
+    return view('home');
+});
 
-Route::get('/shop', function () { return view('shop'); });
+Route::get('/shop', function () {
+    return view('shop');
+});
 Route::get('/stats', [StatistkenController::class, 'index']);
 Route::get('/stats/{uuid}', [StatistkenController::class, 'userStats']);
 Route::get('/team', [TeamController::class, 'index']);
-Route::get('/regelwerk', function () { return view('rules'); });
+Route::get('/regelwerk', function () {
+    return view('rules');
+});
 Route::get('/jobs', [JobsController::class, 'index']);
 Route::post('/jobs/{id}/applied', [DiscordController::class, 'applyWebhook']);
 Route::get("/jobs/{id}", [JobsController::class, 'byId']);
 
-Route::get('/impressum', function () { return view('impressum'); });
-Route::get('/agb', function () { return view('agb'); });
-Route::get('/datenschutz', function () { return view('datenschutz'); });
+Route::get('/impressum', function () {
+    return view('impressum');
+});
+Route::get('/agb', function () {
+    return view('agb');
+});
+Route::get('/datenschutz', function () {
+    return view('datenschutz');
+});
 
 
 Route::get('/testWebhook', [DiscordController::class, 'testWebhook']);
