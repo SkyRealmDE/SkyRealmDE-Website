@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 
 class DiscordController extends Controller
 {
-
     public function testWebhook(Request $request)
     {
         $this->sendWebhook($request);
@@ -19,7 +18,6 @@ class DiscordController extends Controller
 
     public function applyWebhook(Request $request, $id)
     {
-
         // Check if cf-turnstile-response is valid
         if (!$request->has('cf-turnstile-response')) {
             return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
@@ -42,7 +40,9 @@ class DiscordController extends Controller
         );
         $context  = stream_context_create($options);
         $result = file_get_contents($recaptcha_url, false, $context);
-        if ($result === FALSE) return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+        if ($result === false) {
+            return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+        }
 
         $recaptcha = $result;
         $recaptcha = json_decode($recaptcha);
@@ -54,14 +54,20 @@ class DiscordController extends Controller
 
         $job = Jobs::all()->find($id);
 
-        $this->sendApplyWebhook($job->title, $request->post('about'), $job->color, $request->post('discord'),
-            $request->post('mail'), $request->post('name'));
+        $this->sendApplyWebhook(
+            $job->title,
+            $request->post('about'),
+            $job->color,
+            $request->post('discord'),
+            $request->post('mail'),
+            $request->post('name')
+        );
 
         try {
             // Send mail to user using PHPMailer
             $mail = new MailController();
             $mail->sendApplyMail($request->post('name'), $request->post('mail'), $job->title);
-        }catch (Exception $exception) {
+        } catch (Exception $exception) {
         }
 
         return view('jobs.applied', ['title' => $job->title]);
@@ -71,7 +77,8 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendWebhook(Request $request) {
+    private function sendWebhook(Request $request)
+    {
         $embed = new Embed();
         $embed->setTitle('Website Benachrichtigung 🌶️');
         $embed->setDescription('Es wurde ein Test-Login empfangen. Daten wurden gespeichert und übertragen.');
@@ -90,7 +97,8 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name) {
+    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name)
+    {
         $embed = new Embed();
         $embed->setTitle($name." hat sich als ".$title." beworben");
         $embed->setColor(hexdec(str_replace('#', '', $color)));
@@ -105,5 +113,4 @@ class DiscordController extends Controller
         $hook->setEmbed($embed);
         $hook->send("DISCORD_WEBHOOK_JOB");
     }
-
 }
