@@ -12,9 +12,9 @@ class MailController extends Controller
             $message->to($email)->subject("Vielen Dank für deine Bewerbung als $job bei SkyRealm");
         });
     }
-    public function sendApproveMail($name, $email, $job, $day, $date, $time, $participants)
+    public function sendApproveMail($name, $email, $day, $date, $time, $participants)
     {
-        Mail::send('emails.approve_email', ['name' => $name, 'day' => $day, 'date' => $date, 'time' => $time, 'participants' => $participants], function ($message) use ($job, $email) {
+        Mail::send('emails.approve_email', ['name' => $name, 'day' => $day, 'date' => $date, 'time' => $time, 'participants' => $participants], function ($message) use ($email) {
             $message->to($email)->subject("Einladung zum Online-Interview - SkyRealm");
         });
     }
