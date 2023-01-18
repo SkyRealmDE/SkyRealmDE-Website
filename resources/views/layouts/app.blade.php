@@ -33,11 +33,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdn.sellix.io/static/js/embed.js"></script>
     </head>
-    <body class="font-sans bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white antialiased overflow-y-auto overflow-x-hidden">
+    <body class="font-sans bg-gray-900 text-gray-900 dark:text-white antialiased overflow-y-auto overflow-x-hidden">
         <x-navigation />
 
         <div class="min-h-full flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-            <div class="w-full sm:max-w-[90%] mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full sm:max-w-[90%] mt-6 px-6 py-4 bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
             </div>
         </div>

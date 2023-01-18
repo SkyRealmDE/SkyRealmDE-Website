@@ -20,19 +20,19 @@
                 <div class="flow-root mt-8 lg:mt-10">
                     <div class="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                            <img class="h-8" src="{{ asset('assets/partners/netcup.svg') }}" alt="Netcup">
+                            <a href="https://www.netcup.de/vserver/"><img class="h-8" src="{{ asset('assets/partners/netcup.svg') }}" alt="Netcup"></a>
                         </div>
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                            <img class="h-8" src="{{ asset('assets/partners/devsky.svg') }}" alt="DevSky <3">
+                            <a href="https://discord.gg/devsky"><img class="h-8" src="{{ asset('assets/partners/devsky.svg') }}" alt="DevSky <3"></a>
                         </div>
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                            <img class="h-8" src="{{ asset('assets/partners/tcpshield.svg') }}" alt="TCPShield">
+                            <a href="https://tcpshield.com/"><img class="h-8" src="{{ asset('assets/partners/tcpshield.svg') }}" alt="TCPShield"></a>
                         </div>
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                            <img class="h-8" src="{{ asset('assets/partners/fiverr.svg') }}" alt="Fiverr">
+                            <a href="https://www.fiverr.com/s2/363795c6c3"><img class="h-8" src="{{ asset('assets/partners/fiverr.svg') }}" alt="Fiverr"></a>
                         </div>
                         <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                            <img class="h-8" src="{{ asset('assets/partners/cloudflare.svg') }}" alt="Cloudflare">
+                            <a href="https://cloudflare.com/"><img class="h-8" src="{{ asset('assets/partners/cloudflare.svg') }}" alt="Cloudflare"></a>
                         </div>
                     </div>
                 </div>

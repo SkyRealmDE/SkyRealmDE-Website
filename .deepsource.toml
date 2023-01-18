@@ -1,0 +1,19 @@
+version = 1
+
+[[analyzers]]
+name = "shell"
+
+[[analyzers]]
+name = "javascript"
+
+[[analyzers]]
+name = "php"
+
+  [analyzers.meta]
+  bootstrap_files = ["bootstrap"]
+
+[[transformers]]
+name = "prettier"
+
+[[transformers]]
+name = "php-cs-fixer"
