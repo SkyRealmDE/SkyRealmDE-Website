@@ -9,6 +9,9 @@ name = "javascript"
 [[analyzers]]
 name = "php"
 
+  [analyzers.meta]
+  bootstrap_files = ["bootstrap"]
+
 [[transformers]]
 name = "prettier"
 
