@@ -7,7 +7,6 @@ use GuzzleHttp\Exception\ClientException;
 
 class Webhook
 {
-
     /*
      * Set webhook parameters
      */
@@ -39,7 +38,9 @@ class Webhook
      */
     public function setText($value)
     {
-        if (strlen($value) > 2000) throw new \Exception('Webhook text cannot be longer then 2000 characters.');
+        if (strlen($value) > 2000) {
+            throw new \Exception('Webhook text cannot be longer then 2000 characters.');
+        }
         $this->content = $value;
         return $this;
     }
@@ -52,7 +53,9 @@ class Webhook
      */
     public function setUsername($name)
     {
-        if (strlen($name) > 32) throw new \Exception('Webhook username cannot be longer then 32 characters.');
+        if (strlen($name) > 32) {
+            throw new \Exception('Webhook username cannot be longer then 32 characters.');
+        }
         $this->username = $name;
         return $this;
     }
@@ -82,7 +85,7 @@ class Webhook
         $client = new Client();
         $WEBHOOK_URL = env($name);
 
-        if($WEBHOOK_URL == null) {
+        if ($WEBHOOK_URL == null) {
             return;
         }
 

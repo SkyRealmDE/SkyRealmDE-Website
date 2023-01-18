@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Purchase extends Model {
-
+class Purchase extends Model
+{
     protected $table = 'purchases';
 
     protected $fillable = [
@@ -14,6 +14,4 @@ class Purchase extends Model {
         'sellix_id',
         'status',
     ];
-
-
 }
