@@ -50,7 +50,10 @@
                         <div class="border-t border-gray-400 py-4">
                             <h2 class="text-2xl underline font-black">§3 Strafen</h2>
                             <div class="px-4">
-                                <p class="text-sm py-2">Verstöße gegen diese Regeln können je nach Schwere des Vergehens zu Verwarnungen, temporären oder dauerhaften Banns führen. Jeder Fall wird individuell geprüft und die Strafe entsprechend festgelegt. Wiederholte Verstöße können zu härteren Strafen führen. Wir bitten um Verständnis, dass wir uns das Recht vorbehalten, ohne Angabe von Gründen jederzeit Strafen auszusprechen oder Regeln zu ändern.</p>
+                                <div class="py-2">
+                                    <h3 class="text-base font-medium">§3.1 Wiederholte Verstöße</h3>
+                                    <p class="text-sm">Verstöße gegen diese Regeln können je nach Schwere des Vergehens zu Verwarnungen, temporären oder dauerhaften Banns führen. Jeder Fall wird individuell geprüft und die Strafe entsprechend festgelegt. Wiederholte Verstöße können zu härteren Strafen führen. Wir bitten um Verständnis, dass wir uns das Recht vorbehalten, ohne Angabe von Gründen jederzeit Strafen auszusprechen oder Regeln zu ändern.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="border-t border-gray-400 py-4">
