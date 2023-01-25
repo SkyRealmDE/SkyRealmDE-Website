@@ -39,7 +39,7 @@
                             <div class="px-4">
                                 <div class="py-2">
                                     <h3 class="text-base font-medium">§2.1 Verbotene Bauwerke</h3>
-                                    <p class="text-sm">Verboten sind u.a. Bauwerke mit rassistischem, nationalistischem, sexuellem oder beleidigendem Hintergrund, Dauerhaft laufende Redstone Schaltungen, Anlagen, die explizit dazu dienen, den Server zu schädigen, Farmen, die nicht abschaltbar sind und auch ohne Anwesenheit des Besitzers laufen, Kakteenfarmen mit mehr als 1.000 Kakteen.</p>
+                                    <p class="text-sm">Verboten sind u.a. Bauwerke mit rassistischem, nationalistischem, sexuellem oder beleidigendem Hintergrund, Anlagen, die explizit dazu dienen, den Server zu schädigen, Farmen, die nicht abschaltbar sind und auch ohne Anwesenheit des Besitzers laufen, Kakteenfarmen mit mehr als 1.000 Kakteen.</p>
                                 </div>
                                 <div class="py-2">
                                     <h3 class="text-base font-medium">§2.2 Farmen & Tierhaltung</h3>
