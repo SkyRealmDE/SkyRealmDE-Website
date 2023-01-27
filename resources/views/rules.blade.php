@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="py-2">
                                     <h3 class="text-base font-medium">§2.2 Farmen & Tierhaltung</h3>
-                                    <p class="text-sm">Tiere sollten ausreichend Platz haben (maximal 1 Tier pro Block, ausgenommen Mobfarmen). Farmen, die der Performance des Servers schaden könnten (z.B. One-Tick-Farmen) sind verboten.</p>
+                                    <p class="text-sm">Tiere sollten ausreichend Platz haben (maximal 1 Tier pro Block, ausgenommen Mobfarmen). Farmen, die der Performance des Servers schaden könnten (z.B. One-Tick-Farmen) sind verboten. <strong>AFK XP Farming ist verboten, normales AFK Farming ist jedoch erlaubt.</strong></p>
                                 </div>
                             </div>
                         </div>
