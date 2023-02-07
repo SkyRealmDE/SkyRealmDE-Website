@@ -42,7 +42,8 @@ class Embed
         if (strlen($value) > 1024) {
             throw new Exception('Embed field value cannot be longer then 1024 characters.');
         }
-        array_push($this->fields, ["name" => $title, "value" => $value, "inline" => $inline]);
+        array_push($this->fields, ['name' => $title, 'value' => $value, 'inline' => $inline]);
+
         return $this;
     }
 
@@ -60,6 +61,7 @@ class Embed
             throw new Exception('Embed title cannot be longer then 256 characters.');
         }
         $this->title = $text;
+
         return $this;
     }
 
@@ -73,6 +75,7 @@ class Embed
     public function setThumbnail($url)
     {
         $this->thumbnail = $url;
+
         return $this;
     }
 
@@ -86,6 +89,7 @@ class Embed
     public function setImage($url)
     {
         $this->image = $url;
+
         return $this;
     }
 
@@ -103,6 +107,7 @@ class Embed
             throw new Exception('Color must be an integer.');
         }
         $this->color = $decimal;
+
         return $this;
     }
 
@@ -119,7 +124,8 @@ class Embed
         if (strlen($name) > 256) {
             throw new Exception('Author name cannot be longer then 256 characters.');
         }
-        $this->author = ["name" => $name, "icon_url", $iconURL];
+        $this->author = ['name' => $name, 'icon_url', $iconURL];
+
         return $this;
     }
 
@@ -137,6 +143,7 @@ class Embed
             throw new Exception('Description cannot be longer then 2048 characters.');
         }
         $this->description = $value;
+
         return $this;
     }
 
@@ -150,6 +157,7 @@ class Embed
     public function setURL($url)
     {
         $this->url = $url;
+
         return $this;
     }
 
@@ -162,10 +170,11 @@ class Embed
 
     public function setTimestamp($date = false)
     {
-        if (!$date) {
+        if (! $date) {
             $date = date(DateTime::ISO8601, time());
         }
         $this->timestamp = $date;
+
         return $this;
     }
 
@@ -183,7 +192,8 @@ class Embed
         if (strlen($value) > 2048) {
             throw new Exception('Footer text cannot be longer then 2048 characters.');
         }
-        $this->footer = ["text" => $value, "icon_url" => $iconURL];
+        $this->footer = ['text' => $value, 'icon_url' => $iconURL];
+
         return $this;
     }
 

@@ -17,7 +17,7 @@ class Jobs extends Model
         'branch',
         'tags',
         'active',
-        'color'
+        'color',
     ];
 
     public function getTagsAttribute()
