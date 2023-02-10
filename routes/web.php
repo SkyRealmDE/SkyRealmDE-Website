@@ -32,7 +32,7 @@ Route::get('/regelwerk', function () {
 });
 Route::get('/jobs', [JobsController::class, 'index']);
 Route::post('/jobs/{id}/applied', [DiscordController::class, 'applyWebhook']);
-Route::get("/jobs/{id}", [JobsController::class, 'byId']);
+Route::get('/jobs/{id}', [JobsController::class, 'byId']);
 
 Route::get('/impressum', function () {
     return view('impressum');
@@ -44,8 +44,6 @@ Route::get('/datenschutz', function () {
     return view('datenschutz');
 });
 
-
 Route::get('/testWebhook', [DiscordController::class, 'testWebhook']);
-
 
 require __DIR__.'/auth.php';

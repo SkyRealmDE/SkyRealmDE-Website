@@ -3,7 +3,6 @@
 namespace App\Models\Discord;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 
 class Webhook
 {
@@ -27,6 +26,7 @@ class Webhook
     public function setEmbed($embed)
     {
         $this->embeds = [$embed];
+
         return $this;
     }
 
@@ -42,6 +42,7 @@ class Webhook
             throw new \Exception('Webhook text cannot be longer then 2000 characters.');
         }
         $this->content = $value;
+
         return $this;
     }
 
@@ -57,6 +58,7 @@ class Webhook
             throw new \Exception('Webhook username cannot be longer then 32 characters.');
         }
         $this->username = $name;
+
         return $this;
     }
 
@@ -69,6 +71,7 @@ class Webhook
     public function setAvatar($url)
     {
         $this->avatar_url = $url;
+
         return $this;
     }
 
@@ -90,16 +93,17 @@ class Webhook
         }
 
         $result = $client->post($WEBHOOK_URL, [
-            "headers" => [
-                "Content-Type" => "application/json"
+            'headers' => [
+                'Content-Type' => 'application/json',
             ],
-            "json" => [
-                "content" => $this->content,
-                "username" => $this->username,
-                "avatar_url" => $this->avatar_url,
-                "embeds" => $this->embeds
-            ]
+            'json' => [
+                'content' => $this->content,
+                'username' => $this->username,
+                'avatar_url' => $this->avatar_url,
+                'embeds' => $this->embeds,
+            ],
         ]);
+
         return $result;
     }
 }

@@ -2,42 +2,69 @@
 
 namespace App\Models;
 
-use DateTime;
 use Illuminate\Support\Facades\DB;
 
 class PlayerStatistics
 {
     private $uniqueId;
-    public $damageDealt = 0;
-    public $damageTaken = 0;
-    public $deaths = 0;
-    public $mobKills = 0;
-    public $playerKills = 0;
-    public $fishCaught = 0;
-    public $animalsBred = 0;
-    public $timesQuit = 0;
-    public $jumps = 0;
-    public $dropCount = 0;
-    public $totalOnlineTime = 0;
-    public $sneakTime = 0;
-    public $walkCms = 0;
-    public $walkOnWaterCms = 0;
-    public $fallCms = 0;
-    public $climbCms = 0;
-    public $flyCms = 0;
-    public $walkUnderWaterCms = 0;
-    public $minecartCms= 0;
-    public $boatCms= 0;
-    public $pigCms= 0;
-    public $horseCms= 0;
-    public $sprintCms= 0;
-    public $crouchCms= 0;
-    public $aviateCms= 0;
-    public $striderCms= 0;
-    public $talkedToVillagers= 0;
-    public $tradedWithVillagers= 0;
 
-    public $onlineTime = "-";
+    public $damageDealt = 0;
+
+    public $damageTaken = 0;
+
+    public $deaths = 0;
+
+    public $mobKills = 0;
+
+    public $playerKills = 0;
+
+    public $fishCaught = 0;
+
+    public $animalsBred = 0;
+
+    public $timesQuit = 0;
+
+    public $jumps = 0;
+
+    public $dropCount = 0;
+
+    public $totalOnlineTime = 0;
+
+    public $sneakTime = 0;
+
+    public $walkCms = 0;
+
+    public $walkOnWaterCms = 0;
+
+    public $fallCms = 0;
+
+    public $climbCms = 0;
+
+    public $flyCms = 0;
+
+    public $walkUnderWaterCms = 0;
+
+    public $minecartCms = 0;
+
+    public $boatCms = 0;
+
+    public $pigCms = 0;
+
+    public $horseCms = 0;
+
+    public $sprintCms = 0;
+
+    public $crouchCms = 0;
+
+    public $aviateCms = 0;
+
+    public $striderCms = 0;
+
+    public $talkedToVillagers = 0;
+
+    public $tradedWithVillagers = 0;
+
+    public $onlineTime = '-';
 
     public $asList = [];
 
@@ -62,7 +89,6 @@ class PlayerStatistics
 
             // Calculate online time (totalOnlineTime is in 1/20 seconds)
             $this->onlineTime = $this->calculateOnlineTime($this->totalOnlineTime);
-
 
             $this->sneakTime = $dbRow->sneak_time;
             $this->walkCms = $dbRow->walk_cms;
@@ -128,22 +154,22 @@ class PlayerStatistics
         $hours = $hours % 24;
         $days = intval($days);
 
-        $onlineTime = "";
+        $onlineTime = '';
 
         if ($days > 0) {
-            $onlineTime .= $days . "d ";
+            $onlineTime .= $days.'d ';
         }
 
         if ($hours > 0) {
-            $onlineTime .= $hours . "h ";
+            $onlineTime .= $hours.'h ';
         }
 
         if ($minutes > 0) {
-            $onlineTime .= $minutes . "m ";
+            $onlineTime .= $minutes.'m ';
         }
 
         if ($seconds > 0) {
-            $onlineTime .= $seconds . "s";
+            $onlineTime .= $seconds.'s';
         }
 
         return $onlineTime;

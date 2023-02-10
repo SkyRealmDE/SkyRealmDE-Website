@@ -13,13 +13,14 @@ class DiscordController extends Controller
     public function testWebhook(Request $request)
     {
         $this->sendWebhook($request);
+
         return view('home');
     }
 
     public function applyWebhook(Request $request, $id)
     {
         // Check if cf-turnstile-response is valid
-        if (!$request->has('cf-turnstile-response')) {
+        if (! $request->has('cf-turnstile-response')) {
             return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
         }
 
@@ -28,17 +29,17 @@ class DiscordController extends Controller
         $recaptcha_response = $request->post('cf-turnstile-response');
 
         // Make and decode POST request:
-        $data = array('secret' => $recaptcha_secret, 'response' => $recaptcha_response);
+        $data = ['secret' => $recaptcha_secret, 'response' => $recaptcha_response];
 
         // use key 'http' even if you send the request to https://...
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data)
-            )
-        );
-        $context  = stream_context_create($options);
+        $options = [
+            'http' => [
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($data),
+            ],
+        ];
+        $context = stream_context_create($options);
         $result = file_get_contents($recaptcha_url, false, $context);
         if ($result === false) {
             return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
@@ -48,7 +49,7 @@ class DiscordController extends Controller
         $recaptcha = json_decode($recaptcha);
         //print_r($recaptcha);
         // Take action based on the score returned:
-        if (!$recaptcha->success) {
+        if (! $recaptcha->success) {
             return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
         }
 
@@ -73,7 +74,6 @@ class DiscordController extends Controller
         return view('jobs.applied', ['title' => $job->title]);
     }
 
-
     /**
      * @throws Exception
      */
@@ -86,12 +86,12 @@ class DiscordController extends Controller
         $embed->setColor(hexdec('badc58'));
         $embed->setFooter('Powered by SkyRealmDE ❤️', 'https://skyrealm.de/android-chrome-512x512.png');
         $embed->setTimestamp(date('c', strtotime('now')));
-        $embed->addField('=+= IP', '```' . $request->ip() . '```', false);
-        $embed->addField('=+= User-Agent', '```' . $request->userAgent() . '```', false);
+        $embed->addField('=+= IP', '```'.$request->ip().'```', false);
+        $embed->addField('=+= User-Agent', '```'.$request->userAgent().'```', false);
 
         $hook = new Webhook();
         $hook->setEmbed($embed);
-        $hook->send("DISCORD_WEBHOOK_SHOP");
+        $hook->send('DISCORD_WEBHOOK_SHOP');
     }
 
     /**
@@ -100,17 +100,17 @@ class DiscordController extends Controller
     private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name)
     {
         $embed = new Embed();
-        $embed->setTitle($name." hat sich als ".$title." beworben");
+        $embed->setTitle($name.' hat sich als '.$title.' beworben');
         $embed->setColor(hexdec(str_replace('#', '', $color)));
-        $embed->addField("=+= Discord", "```$discord```");
-        $embed->addField("=+= E-Mail", "```$mail```");
-        $embed->addField("=+= Name", "```$name```");
-        $embed->addField("=+= Über mich", "```".PHP_EOL."$about```");
-        $embed->setFooter("Neue Bewerbung erhalten", "https://skyrealm.de/android-chrome-512x512.png");
+        $embed->addField('=+= Discord', "```$discord```");
+        $embed->addField('=+= E-Mail', "```$mail```");
+        $embed->addField('=+= Name', "```$name```");
+        $embed->addField('=+= Über mich', '```'.PHP_EOL."$about```");
+        $embed->setFooter('Neue Bewerbung erhalten', 'https://skyrealm.de/android-chrome-512x512.png');
         $embed->setTimestamp(date('c', strtotime('now')));
 
         $hook = new Webhook();
         $hook->setEmbed($embed);
-        $hook->send("DISCORD_WEBHOOK_JOB");
+        $hook->send('DISCORD_WEBHOOK_JOB');
     }
 }
