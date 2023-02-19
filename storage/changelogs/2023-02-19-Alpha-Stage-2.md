@@ -57,12 +57,15 @@ Folgende Materialien können nun komprimiert werden:
 -   Granite
 -   Copper Block
 -   Iron Block
+-   Lapis Block
 -   Gold Block
+-   Redstone Block
 -   Diamond Block
 -   Emerald Block
 -   Netherite Block
 -   Coal Block
 -   Dirt
+-   Gravel
 
 Diese könnt ihr nun bis zu 8x komprimieren, in dem ihr jeweils 9 Blöcke in einem Crafting-Table kombiniert.
 Natürlich könnt ihr diese auch wieder dekomprimieren.
