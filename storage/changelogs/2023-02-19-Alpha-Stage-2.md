@@ -41,6 +41,7 @@ Nachdem wir in der ersten Alpha Stage bereits viele Fehler beheben und neue Feat
 -   Mobs spawnen nun nicht mehr auf ungeladenen Realms
 -   /r nimmt nun nicht mehr den falschen Spieler
 -   Spieler können sich nun keine Coins mehr geben
+-   Mit /pay kann man nun alle Coins, die man besitzt, bezahlen
 
 <br>
 
