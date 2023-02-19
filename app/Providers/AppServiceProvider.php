@@ -10,20 +10,16 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot(UrlGenerator $url, Request $request)
+    public function boot(UrlGenerator $url, Request $request): void
     {
         if ($request->server->get('HTTP_X_FORWARDED_PROTO') == 'https') {
             $url->forceScheme('https');
