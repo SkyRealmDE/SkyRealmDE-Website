@@ -9,7 +9,6 @@ use Parsedown;
 
 class ChangelogController extends Controller
 {
-
     public function index(): Factory|View|Application
     {
         $changelogs = [];
@@ -28,7 +27,7 @@ class ChangelogController extends Controller
             ];
         }
 
-        usort($changelogs, function($a, $b) {
+        usort($changelogs, function ($a, $b) {
             return $b['date'] <=> $a['date'];
         });
 
@@ -36,5 +35,4 @@ class ChangelogController extends Controller
 
         return view('changelogs.index', ['changelogs' => $changelogs]);
     }
-
 }
