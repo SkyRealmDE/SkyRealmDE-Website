@@ -32,18 +32,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Version
-    |--------------------------------------------------------------------------
-    |
-    | This value determines the "version" your application is currently
-    | running.
-    |
-    */
-
-    'version' => 'canary',
-
-    /*
-    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -65,10 +53,9 @@ return [
     | your application so that it is used when running Artisan tasks.
     |
     */
+    'url' => env('APP_URL', 'http://localhost'),
 
-    'url' => env('APP_URL', 'http://192.168.178.124'),
-
-    'asset_url' => env('ASSET_URL'),
+    'asset_url' => env('ASSET_URL', '/'),
 
     /*
     |--------------------------------------------------------------------------
