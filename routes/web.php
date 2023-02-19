@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChangelogController;
 use App\Http\Controllers\DiscordController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\StatistkenController;
@@ -43,6 +44,8 @@ Route::get('/agb', function () {
 Route::get('/datenschutz', function () {
     return view('datenschutz');
 });
+
+Route::get('/changelogs', [ChangelogController::class, 'index'])->name('changelogs');
 
 Route::get('/testWebhook', [DiscordController::class, 'testWebhook']);
 

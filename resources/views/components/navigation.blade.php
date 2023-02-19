@@ -33,6 +33,8 @@
 
                             <a href="/jobs" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs</a>
 
+                            <a href="/changelogs" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Changelogs</a>
+
                         </div>
                         <div>
                             <a href="https://discord.gg/skyrealm" target="_blank" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fa-brands fa-discord"></i></a>
@@ -68,6 +70,8 @@
             <a href="/regelwerk" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Regelwerk</a>
 
             <a href="/jobs" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Jobs</a>
+
+            <a href="/changelogs" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Changelogs</a>
 
             <a href="/impressum" class="text-gray-100 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ trans('skyrealm.imprint') }}</a>
 
