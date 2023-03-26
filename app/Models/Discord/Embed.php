@@ -34,7 +34,7 @@ class Embed
      * @exception \Exception
      * @return Michel3951\DiscordWebhook\Embed
      */
-    public function addField($title, $value, $inline = false)
+    public function addField($title, $value, $inline = true)
     {
         if (strlen($title) > 256) {
             throw new Exception('Embed field title cannot be longer then 256 characters.');

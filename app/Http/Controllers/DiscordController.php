@@ -54,14 +54,19 @@ class DiscordController extends Controller
         }
 
         $job = Jobs::all()->find($id);
-
         $this->sendApplyWebhook(
             $job->title,
             $request->post('about'),
             $job->color,
             $request->post('discord'),
             $request->post('mail'),
-            $request->post('name')
+            $request->post('name'),
+            $request->post('alter'),
+            $request->post('staerken'),
+            $request->post('schwaechen'),
+            $request->post('online'),
+            $request->post('knowlege'),
+            $request->post('knowing')
         );
 
         try {
@@ -97,7 +102,7 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name)
+    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $alter, $staerken, $schwaechen, $online, $knowlege, $knowing)
     {
         $embed = new Embed();
         $embed->setTitle($name.' hat sich als '.$title.' beworben');
@@ -105,7 +110,18 @@ class DiscordController extends Controller
         $embed->addField('=+= Discord', "```$discord```");
         $embed->addField('=+= E-Mail', "```$mail```");
         $embed->addField('=+= Name', "```$name```");
-        $embed->addField('=+= Über mich', '```'.PHP_EOL."$about```");
+        $embed->addField('=+= Alter', "```$alter```");
+        $embed->addField('=+= Online', "```$online```");
+        $embed->addField('=+= Stärken', "```$staerken```", false);
+        $embed->addField('=+= Schwächen', "```$schwaechen```", false);
+        $embed->addField('=+= Minecraft Java Erfahrung', "```$knowlege```", false);
+        $embed->addField('=+= Wie hast du von SkyRealmDE erfahren?', "```$knowing```", false);
+        $line = 1;
+        $aboutBlocks = str_split($about, 1000);
+        foreach ($aboutBlocks as $block) {
+            $embed->addField('=+= Über mich ('.$line.')', '```'.PHP_EOL."$block```", false);
+            ++$line;
+        }
         $embed->setFooter('Neue Bewerbung erhalten', 'https://skyrealm.de/android-chrome-512x512.png');
         $embed->setTimestamp(date('c', strtotime('now')));
 
