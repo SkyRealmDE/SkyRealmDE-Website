@@ -102,7 +102,7 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $alter ,$staerken, $schwaechen, $online, $knowlege, $knowing)
+    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $alter, $staerken, $schwaechen, $online, $knowlege, $knowing)
     {
         $embed = new Embed();
         $embed->setTitle($name.' hat sich als '.$title.' beworben');
