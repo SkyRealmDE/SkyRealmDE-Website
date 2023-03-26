@@ -54,7 +54,6 @@ class DiscordController extends Controller
         }
 
         $job = Jobs::all()->find($id);
-        dd($this);
         $this->sendApplyWebhook(
             $job->title,
             $request->post('about'),
@@ -112,12 +111,17 @@ class DiscordController extends Controller
         $embed->addField('=+= E-Mail', "```$mail```");
         $embed->addField('=+= Name', "```$name```");
         $embed->addField('=+= Alter', "```$alter```");
-        $embed->addField('=+= Stärken', "```$staerken```");
-        $embed->addField('=+= Schwächen', "```$schwaechen```");
         $embed->addField('=+= Online', "```$online```");
-        $embed->addField('=+= Knowlege', "```$knowlege```");
-        $embed->addField('=+= Knowing', "```$knowing```");
-        $embed->addField('=+= Über mich', '```'.PHP_EOL."$about```");
+        $embed->addField('=+= Stärken', "```$staerken```", false);
+        $embed->addField('=+= Schwächen', "```$schwaechen```", false);
+        $embed->addField('=+= Minecraft Java Erfahrung', "```$knowlege```", false);
+        $embed->addField('=+= Wie hast du von SkyRealmDE erfahren?', "```$knowing```", false);
+        $line = 1;
+        $aboutBlocks = str_split($about, 1000);
+        foreach ($aboutBlocks as $block) {
+            $embed->addField('=+= Über mich ('.$line.')', '```'.PHP_EOL."$block```", false);
+            ++$line;
+        }
         $embed->setFooter('Neue Bewerbung erhalten', 'https://skyrealm.de/android-chrome-512x512.png');
         $embed->setTimestamp(date('c', strtotime('now')));
 
