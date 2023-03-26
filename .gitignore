@@ -19,3 +19,5 @@ yarn-error.log
 package-lock.json
 
 .DS_Store
+
+composer.phar

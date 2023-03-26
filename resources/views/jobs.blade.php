@@ -3,27 +3,27 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <img src="{{ asset('assets/jobs.png') }}" alt="Banner Image" class="w-full rounded-lg">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-5 text-gray-900 dark:text-gray-100">
 
-                    <div class="flex justify-between bg-gray-700 px-4 py-5 border-b sm:rounded-md border-gray-600 sm:px-6">
-                        <h3 class="text-2xl leading-6 font-medium text-white">Stellenangebote</h3>
+                    <div class="flex justify-between bg-gray-700 px-4 py-5 border-b sm:rounded-md border-gray-600 ">
+                        <h3 class="text-2xl leading-6 font-medium text-white">Bewerbungen</h3>
                         ({{ count($openJobs) }})
                     </div>
 
                     <br>
 
-                    <div class="bg-gray-500 shadow overflow-hidden sm:rounded-md">
-                        <ul role="list" class="divide-y divide-gray-100">
+                    <div class="py-1 px-3 bg-gray-500 shadow overflow-hidden sm:rounded-md ">
+                        <ul role="list" class="divide-y divide-gray-100 ">
                             @foreach($openJobs as $job)
-                            <li>
-                                <a href="jobs/{{ $job->id }}" class="block hover:bg-gray-700 transition">
-                                    <div class="px-4 py-4 sm:px-6">
+                            <li class="hover:bg-gray-600 sm:rounded-md transition" style="list-style: none;">
+                                <a href="jobs/{{ $job->id }}" class="block">
+                                    <div class="px-2 py-4 sm:px-6">
                                         <div class="flex items-center justify-between mb-4">
                                             <p class="text-sm font-black text-[18px] truncate" style="color: {{ $job->color }}">{{ $job->title }}</p>
                                             <div class="flex">
                                             @foreach($job->getTagsAttribute() as $tag)
                                                 <div class="ml-2 flex-shrink-0 flex">
-                                                    <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full border-orange-900 bg-orange-100 text-gray-600">{{ $tag }}</p>
+                                                    <p class="px-6 inline-flex text-xs leading-5 font-semibold rounded-full border-orange-900 bg-orange-100 text-gray-600">{{ $tag }}</p>
                                                 </div>
                                             @endforeach
                                             </div>
