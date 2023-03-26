@@ -54,14 +54,20 @@ class DiscordController extends Controller
         }
 
         $job = Jobs::all()->find($id);
-
+        dd($this);
         $this->sendApplyWebhook(
             $job->title,
             $request->post('about'),
             $job->color,
             $request->post('discord'),
             $request->post('mail'),
-            $request->post('name')
+            $request->post('name'),
+            $request->post('alter'),
+            $request->post('staerken'),
+            $request->post('schwaechen'),
+            $request->post('online'),
+            $request->post('knowlege'),
+            $request->post('knowing')
         );
 
         try {
@@ -97,7 +103,7 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name)
+    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $alter ,$staerken, $schwaechen, $online, $knowlege, $knowing)
     {
         $embed = new Embed();
         $embed->setTitle($name.' hat sich als '.$title.' beworben');
@@ -105,6 +111,12 @@ class DiscordController extends Controller
         $embed->addField('=+= Discord', "```$discord```");
         $embed->addField('=+= E-Mail', "```$mail```");
         $embed->addField('=+= Name', "```$name```");
+        $embed->addField('=+= Alter', "```$alter```");
+        $embed->addField('=+= Stärken', "```$staerken```");
+        $embed->addField('=+= Schwächen', "```$schwaechen```");
+        $embed->addField('=+= Online', "```$online```");
+        $embed->addField('=+= Knowlege', "```$knowlege```");
+        $embed->addField('=+= Knowing', "```$knowing```");
         $embed->addField('=+= Über mich', '```'.PHP_EOL."$about```");
         $embed->setFooter('Neue Bewerbung erhalten', 'https://skyrealm.de/android-chrome-512x512.png');
         $embed->setTimestamp(date('c', strtotime('now')));
