@@ -56,7 +56,7 @@
                                     <div class="sm:col-span-4">
                                         <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Stärken </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="staerken" id="staerken" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <textarea required type="text" name="staerken" id="staerken" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
                                         </div>
                                     </div>
 
@@ -64,7 +64,7 @@
                                     <div class="sm:col-span-4">
                                         <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Schwächen </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="schwaechen" id="schwaechen" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <textarea required type="text" name="schwaechen" id="schwaechen" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
                                         </div>
                                     </div>
 
@@ -78,7 +78,7 @@
                                     <div class="sm:col-span-4">
                                         <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Minecraft Java Erfahrung </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="knowlege" id="knowlege" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <textarea required type="text" name="knowlege" id="knowlege" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
                                         </div>
                                     </div>
 
