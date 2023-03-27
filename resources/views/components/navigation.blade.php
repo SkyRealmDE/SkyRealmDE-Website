@@ -75,23 +75,12 @@
                     </div>
 
                     @if ($currentOrNextEvent)
-                        @if ($currentOrNextEvent->start_date <= now())
-                            <div
-                                class="flex justify-between bg-red-800 px-5 py-2.5 border-2 sm:rounded-lg border-red-400 font-medium font-minecraft text-white text-center mb-3">
-                                <h3 class="text-lg leading-6 ">
-                                    LIVE: </h3>
-                                <span class="text-center">{{ $currentOrNextEvent->name }}</span>
-                                <small class="font-normal">{{ $currentOrNextEvent->end_date }}</small>
-                            </div>
-                        @else
-                            <div
-                                class="flex justify-between bg-gray2-100 px-5 py-2.5  border-2 sm:rounded-lg border-gray2-200 font-medium font-minecraft text-white text-center">
-                                <h3 class="text-lg leading-6 ">
-                                    BALD: </h3>
-                                <span class="text-center">{{ $currentOrNextEvent->name }}</span>
-                                <small class="font-normal">{{ $currentOrNextEvent->start_date }}</small>
-                            </div>
-                        @endif
+                        <div
+                            class="flex justify-between px-5 py-2.5 border-2 sm:rounded-lg font-medium font-minecraft text-white text-center bg-red-800 border-red-400">
+                            <h3 id="event-title" class="text-lg leading-6"></h3>
+                            <span class="text-center">{{ $currentOrNextEvent->name }}</span>
+                            <time class="text-sm font-normal" data-startdate="{{ $currentOrNextEvent->start_date }}" data-enddate="{{ $currentOrNextEvent->end_date }}"></time>
+                        </div>
                         <!-- Weitere Informationen über das Event anzeigen -->
                     @endif
 
