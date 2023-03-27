@@ -85,7 +85,7 @@
                             </div>
                         @else
                             <div
-                                class="flex justify-between bg-gray2-100 px-5 py-2.5 border-2 sm:rounded-lg border-gray2-200 font-medium font-minecraft text-white text-center">
+                                class="flex justify-between bg-gray2-100 px-5 py-2.5  border-2 sm:rounded-lg border-gray2-200 font-medium font-minecraft text-white text-center">
                                 <h3 class="text-lg leading-6 ">
                                     BALD: </h3>
                                 <span class="text-center">{{ $currentOrNextEvent->name }}</span>

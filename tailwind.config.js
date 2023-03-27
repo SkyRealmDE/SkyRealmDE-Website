@@ -16,7 +16,7 @@ module.exports = {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 sono: ["Sono", ...defaultTheme.fontFamily.sans],
                 fira: ["Fira Code", ...defaultTheme.fontFamily.mono],
-                minecraft: ["Minecraft", ...defaultTheme.fontFamily.sans],
+                minecraft: ["minecraft_font", ...defaultTheme.fontFamily.sans],
             },
         },
         colors: {
