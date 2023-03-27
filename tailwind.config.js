@@ -16,6 +16,7 @@ module.exports = {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 sono: ["Sono", ...defaultTheme.fontFamily.sans],
                 fira: ["Fira Code", ...defaultTheme.fontFamily.mono],
+                minecraft: ["Minecraft", ...defaultTheme.fontFamily.sans],
             },
         },
         colors: {
@@ -31,6 +32,10 @@ module.exports = {
                 800: "#121212",
                 900: "#0f0f0f",
             },
+            gray2: {
+                100: "#1b1b1b",
+                200: "#484848",
+            },
             transparent: "transparent",
             current: "currentColor",
             black: colors.black,
@@ -39,6 +44,10 @@ module.exports = {
             yellow: colors.yellow,
             green: colors.green,
             orange: colors.orange,
+            red: {
+                400: "#f30000",
+                800: "#5d0000",
+            },
         },
     },
 
