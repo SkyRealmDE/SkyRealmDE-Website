@@ -4,7 +4,7 @@ images.forEach((image) => {
     image.draggable = false;
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     updateTimeElementsWithTimeDifference();
 });
 
