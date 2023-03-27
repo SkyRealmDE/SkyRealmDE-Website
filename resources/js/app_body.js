@@ -16,7 +16,7 @@ function updateTimeElementsWithTimeDifference() {
         const startDate = new Date(startDateString);
         const endDate = new Date(endDateString);
         const now = new Date();
-        let differenceInSeconds, prefix, title, color;
+        let differenceInSeconds = 0, prefix = "", title = "", color = [];
 
         if (now < startDate) {
             differenceInSeconds = Math.round((startDate - now) / 1000);
