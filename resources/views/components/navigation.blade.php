@@ -76,7 +76,7 @@
 
                     @if ($currentOrNextEvent)
                         <div
-                            class="flex justify-between px-5 py-2.5 border-2 sm:rounded-lg font-medium font-minecraft text-white text-center bg-red-800 border-red-400">
+                            class="flex justify-between px-5 py-2.5 border-2 sm:rounded-lg font-medium font-minecraft text-white text-center">
                             <h3 id="event-title" class="text-lg leading-6"></h3>
                             <span class="text-center">{{ $currentOrNextEvent->name }}</span>
                             <time class="text-sm font-normal" data-startdate="{{ $currentOrNextEvent->start_date }}" data-enddate="{{ $currentOrNextEvent->end_date }}"></time>

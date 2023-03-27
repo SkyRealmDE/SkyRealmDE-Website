@@ -16,23 +16,29 @@ function updateTimeElementsWithTimeDifference() {
         const startDate = new Date(startDateString);
         const endDate = new Date(endDateString);
         const now = new Date();
-        let differenceInSeconds = 0, prefix = "", title = "", color = [];
+        let differenceInSeconds = 0,
+            prefix = "",
+            title = "",
+            colors = [];
 
         if (now < startDate) {
             differenceInSeconds = Math.round((startDate - now) / 1000);
             prefix = 'Startet in';
             title = 'BALD:';
-            color = ['bg-gray2-100', 'border-gray2-200']
+            colors = ['bg-gray2-100', 'border-gray2-200'];
             timeElement.title = formatFullDate(startDate);
         } else {
             differenceInSeconds = Math.round((endDate - now) / 1000);
             prefix = 'Endet in';
             title = 'LIVE:';
-            color = ['bg-red-800', 'border-red-400']
+            colors = ['bg-red-800', 'border-red-400'];
             timeElement.title = formatFullDate(endDate);
         }
 
-        document.getElementById('event-title').parentElement.classList.add(color);
+        for(const color of colors) {
+            document.getElementById('event-title').parentElement.classList.add(color);
+        }
+
         document.getElementById('event-title').innerText = title;
 
         const timeDifferenceString = getTimeDifferenceString(differenceInSeconds, prefix);
