@@ -23,6 +23,7 @@ class TeamController extends Controller
             $splitted = explode('.', $permObj->permission);
             $permObj->weight = $splitted[1];
             preg_match('/<(?<color>#[a-f0-9]{6})>(?<rank>.*)/', $splitted[2], $matches);
+
             $permObj->prefix = $matches['rank'];
             $permObj->color = $matches['color'];
 
@@ -40,8 +41,12 @@ class TeamController extends Controller
             $member->rankWeight = $permObj->weight;
             $member->rankPrefix = $permObj->prefix;
             $member->color = $permObj->color;
-            $member->rank = Str::title($member->primary_group);
-            $member->name = Str::title($member->username);
+            $member->rank = match ($member->primary_group) {
+                'webdev' => 'Web-Dev',
+                'eventmanager' => 'EventManager',
+                default => Str::title($member->primary_group),
+            };
+            $member->name = $member->username;
 
             return $member;
         }, $team);
