@@ -32,6 +32,5 @@ class AppServiceProvider extends ServiceProvider
                 ->first();
             $view->with('currentOrNextEvent', $currentOrNextEvent);
         });
-
     }
 }
