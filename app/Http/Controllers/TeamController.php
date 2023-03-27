@@ -15,7 +15,7 @@ class TeamController extends Controller
         $teamRanks = Str::replace('"', '', $teamRanks);
         $teamRanks = explode(',', $teamRanks);
 
-        $team = DB::select('SELECT `uuid`, `username`, `primary_group` FROM luckperms_players WHERE `primary_group` != "default"');
+        $team = DB::select('SELECT lp.uuid, sp.username, lp.primary_group FROM luckperms_players lp JOIN realm_players sp ON UNHEX(REPLACE(lp.uuid, "-", "")) = sp.unique_id WHERE lp.primary_group != "default";');
 
         $prefixPermission = DB::select('SELECT `name`, `permission` FROM luckperms_group_permissions WHERE `permission` LIKE "prefix.%"');
 
