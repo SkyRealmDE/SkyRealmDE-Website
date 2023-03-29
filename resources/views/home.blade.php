@@ -16,6 +16,11 @@
             </div>
             <br>
             <br>
+            <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                <img class="rounded-md border-2 border-grey-700" src="{{ asset('ingameprevv1.png') }}" alt="prev1">
+            </div>
+            <br>
+            <br>
             <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-extrabold text-white">Unsere Partner sprechen für sich!</h2>
                 <div class="flow-root mt-8 lg:mt-10">
