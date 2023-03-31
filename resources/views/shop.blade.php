@@ -29,45 +29,81 @@
                                         <h4 class="flex-shrink-0 pr-4 text-sm tracking-wider font-semibold uppercase text-orange-600">Features</h4>
                                         <div class="flex-1 border-t-2 border-gray-200"></div>
                                     </div>
-                                    <ul role="list" class="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
-                                        <li class="flex items-start lg:col-span-1">
-                                            <div class="flex-shrink-0">
+                                    <ul role="list" class="mt-8  lg:gap-x-5 lg:gap-y-4">
+                                        <li class="flex lg:col-span-1">
+                                            <div class="flex-shrink-0 ">
                                                 <!-- Heroicon name: solid/check-circle -->
                                                 <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <p class="ml-3 text-sm">Zusätzliche tägliche, wöchentliche und monatliche Premium Belohnungen</p>
+                                            <p class="ml-3 text-sm">Zusätzliche tägliche, wöchentliche und monatliche Premium Belohnungen!</p>
                                         </li>
 
-                                        <li class="flex items-start lg:col-span-1">
+
+                                        <li class="flex lg:col-span-1">
                                             <div class="flex-shrink-0">
                                                 <!-- Heroicon name: solid/check-circle -->
                                                 <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <p class="ml-3 text-sm">Eigenen Premium Level Pass mit zusätzlichen Rewards</p>
+                                            <p class="ml-3 text-sm">5 zusätzliche Mitgliedslots auf deinem persönlichem Realm!</p>
                                         </li>
 
-                                        <li class="flex items-start lg:col-span-1">
+                                        <li class="flex  lg:col-span-1">
                                             <div class="flex-shrink-0">
                                                 <!-- Heroicon name: solid/check-circle -->
                                                 <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <p class="ml-3 text-sm">5 zusätzliche Realm Mitgliedsslots</p>
+                                            <p class="ml-3 text-sm">Extrem cooler "Prime" Präfix!</p>
                                         </li>
-
-                                        <li class="flex items-start lg:col-span-1">
+                                        <li class="flex  lg:col-span-1">
                                             <div class="flex-shrink-0">
                                                 <!-- Heroicon name: solid/check-circle -->
                                                 <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <p class="ml-3 text-sm">Extrem cooler "Prime" Präfix</p>
+                                            <p class="ml-3 text-sm">Mit <code>/skull</code> dir einen Kopf von jedem Spieler holen!</p>
+                                        </li>
+                                        <li class="flex  lg:col-span-1">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm">Kostenloses <b>FLY</b> für das eigene Realm!</p>
+                                        </li>
+                                        <li class="flex  lg:col-span-1">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm">Vorabtesten von neuen Features!</p>
+                                        </li>
+                                        <li class="flex  lg:col-span-1">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm">Kostenlos <b>Item Magnet</b>!</p>
+                                        </li>
+                                        <li class="flex  lg:col-span-1">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm"><code>/werbung</code> alle 30 Minuten im Chat!</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -79,16 +115,15 @@
                                     <span class="ml-3 text-xl font-medium text-gray-100"> EUR </span>
                                 </div>
                                 <div class="mt-6">
-                                    <div class="rounded-md shadow flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-300">
-                                        <button
-                                            data-sellix-product="63bfde51424fd"
-                                            type="submit"
-                                            alt="Jetzt kaufen"
-                                            disabled
-                                        >
-                                            Bald verfügbar
-                                        </button>
-                                    </div>
+                                    <button
+                                        class="w-full rounded-md shadow flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-300"
+                                        data-sellix-product="63bfde51424fd"
+                                        type="submit"
+                                        alt="Jetzt kaufen"
+                                        disabled
+                                    >
+                                    Bald verfügbar
+                                    </button>
                                 </div>
                             </div>
                         </div>
