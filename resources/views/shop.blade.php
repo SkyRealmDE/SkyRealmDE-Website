@@ -115,16 +115,15 @@
                                     <span class="ml-3 text-xl font-medium text-gray-100"> EUR </span>
                                 </div>
                                 <div class="mt-6">
-                                    <div class="rounded-md shadow flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-300">
-                                        <button
-                                            data-sellix-product="63bfde51424fd"
-                                            type="submit"
-                                            alt="Jetzt kaufen"
-                                            disabled
-                                        >
-                                            Bald verfügbar
-                                        </button>
-                                    </div>
+                                    <button
+                                        class="w-full rounded-md shadow flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-300"
+                                        data-sellix-product="63bfde51424fd"
+                                        type="submit"
+                                        alt="Jetzt kaufen"
+                                        disabled
+                                    >
+                                    Bald verfügbar
+                                    </button>
                                 </div>
                             </div>
                         </div>
