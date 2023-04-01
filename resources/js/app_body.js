@@ -58,12 +58,12 @@ function getTimeDifferenceString(differenceInSeconds, prefix) {
     const differenceInDays = Math.round(differenceInHours / 24);
 
     if (differenceInSeconds < 60) {
-        return `${prefix} ${differenceInSeconds} Sekunden`;
+        return `${prefix} ${differenceInSeconds} Sekunde${differenceInSeconds > 1 ? 'n' : ''}`;
     } else if (differenceInMinutes < 60) {
-        return `${prefix} ${differenceInMinutes} Minuten`;
+        return `${prefix} ${differenceInMinutes} Minute${differenceInMinutes > 1 ? 'n' : ''}`;
     } else if (differenceInHours < 24) {
-        return `${prefix} ${differenceInHours} Stunden`;
+        return `${prefix} ${differenceInHours} Stunde${differenceInHours > 1 ? 'n' : ''}`;
     } else {
-        return `${prefix} ${differenceInDays} Tagen`;
+        return `${prefix} ${differenceInDays} Tag${differenceInDays > 1 ? 'en' : ''}`;
     }
 }
