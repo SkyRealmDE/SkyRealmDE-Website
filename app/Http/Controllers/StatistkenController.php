@@ -17,8 +17,12 @@ class StatistkenController extends Controller
             // Add - to uuid
             $user->formattedUUID = substr($user->uuid, 0, 8).'-'.substr($user->uuid, 8, 4).'-'.substr($user->uuid, 12, 4).'-'.substr($user->uuid, 16, 4).'-'.substr($user->uuid, 20, 12);
             $userLP = DB::selectOne('SELECT * FROM luckperms_players WHERE `uuid` = ?', [$user->formattedUUID]);
-            $user->rank = Str::title($userLP->primary_group);
-            $user->name = Str::title($userLP->username);
+            $user->rank = match ($userLP->primary_group) {
+                'webdev' => 'Web-Dev',
+                'eventmanager' => 'EventManager',
+                default => Str::title($userLP->primary_group),
+            };
+            $user->name = $user->username;
 
             $prefixPermission = DB::selectOne('SELECT `name`, `permission` FROM luckperms_group_permissions WHERE `permission` LIKE "prefix.%" AND `name` = ?', [$userLP->primary_group]);
             $splitted = explode('.', $prefixPermission->permission);
