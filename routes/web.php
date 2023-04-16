@@ -48,5 +48,3 @@ Route::get('/datenschutz', function () {
 Route::get('/changelogs', [ChangelogController::class, 'index'])->name('changelogs');
 
 Route::get('/testWebhook', [DiscordController::class, 'testWebhook']);
-
-require __DIR__.'/auth.php';
