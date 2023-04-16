@@ -45,11 +45,10 @@ function updateTimeElementsWithTimeDifference() {
 
         document.getElementById("event-title").innerText = title;
 
-        const timeDifferenceString = getTimeDifferenceString(
+        timeElement.textContent = getTimeDifferenceString(
             differenceInSeconds,
             prefix
         );
-        timeElement.textContent = timeDifferenceString;
     });
 }
 
@@ -61,8 +60,7 @@ function formatFullDate(date) {
         hour: "2-digit",
         minute: "2-digit",
     };
-    const formattedDate = date.toLocaleDateString("de-DE", options);
-    return formattedDate;
+    return date.toLocaleDateString("de-DE", options);
 }
 
 function getTimeDifferenceString(differenceInSeconds, prefix) {
