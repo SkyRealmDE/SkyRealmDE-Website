@@ -9,7 +9,9 @@
                     <br>
 
                     @foreach($changelogs as $changelog)
-                        <h1 id="{{ $changelog['anchor'] }}"><a href="{{ '#' . $changelog['anchor'] }}">{{ $changelog['title'] }}</a></h1>
+                        <h1 id="{{ $changelog['anchor'] }}">
+                            <a href="{{ '#' . $changelog['anchor'] }}">{{ $changelog['title'] }}</a>
+                        </h1>
                         <small>{{ $changelog['date'] }}</small>
                         <br>
                         <div>{!! $changelog['content'] !!}</div>
