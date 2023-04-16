@@ -8,28 +8,41 @@ use App\Models\Jobs;
 use Exception;
 use Illuminate\Http\Request;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application as FoundationApplication;
+use Illuminate\Contracts\Foundation\Application as ContractApplication;
+use Illuminate\Contracts\View\Factory;
+
 class DiscordController extends Controller
 {
-    public function testWebhook(Request $request)
+    /**
+     * @throws Exception
+     */
+    public function testWebhook(Request $request): View|FoundationApplication|Factory|ContractApplication
     {
         $this->sendWebhook($request);
 
         return view('home');
     }
 
+    /**
+     * @throws Exception
+     */
     public function applyWebhook(Request $request, $id)
     {
+        $incorrectCaptchaText = 'Du hast den Captcha nicht bestanden!';
+
         // Check if cf-turnstile-response is valid
         if (! $request->has('cf-turnstile-response')) {
-            return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+            return redirect()->back()->with('error', $incorrectCaptchaText);
         }
 
-        $recaptcha_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-        $recaptcha_secret = env('CFCAPTCHA_SECRET');
-        $recaptcha_response = $request->post('cf-turnstile-response');
+        $recaptchaUrl = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+        $recaptchaSecret = env('CFCAPTCHA_SECRET');
+        $recaptchaResponse = $request->post('cf-turnstile-response');
 
         // Make and decode POST request:
-        $data = ['secret' => $recaptcha_secret, 'response' => $recaptcha_response];
+        $data = ['secret' => $recaptchaSecret, 'response' => $recaptchaResponse];
 
         // use key 'http' even if you send the request to https://...
         $options = [
@@ -40,9 +53,9 @@ class DiscordController extends Controller
             ],
         ];
         $context = stream_context_create($options);
-        $result = file_get_contents($recaptcha_url, false, $context);
+        $result = file_get_contents($recaptchaUrl, false, $context);
         if ($result === false) {
-            return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+            return redirect()->back()->with('error', $incorrectCaptchaText);
         }
 
         $recaptcha = $result;
@@ -50,7 +63,7 @@ class DiscordController extends Controller
         //print_r($recaptcha);
         // Take action based on the score returned:
         if (! $recaptcha->success) {
-            return redirect()->back()->with('error', 'Du hast den Captcha nicht bestätigt!');
+            return redirect()->back()->with('error', $incorrectCaptchaText);
         }
 
         $job = Jobs::all()->find($id);
@@ -61,12 +74,12 @@ class DiscordController extends Controller
             $request->post('discord'),
             $request->post('mail'),
             $request->post('name'),
-            $request->post('alter'),
-            $request->post('staerken'),
-            $request->post('schwaechen'),
+            $request->post('age'),
+            $request->post('strengths'),
+            $request->post('weaknesses'),
             $request->post('online'),
-            $request->post('knowlege'),
-            $request->post('knowing')
+            $request->post('knowledge'),
+            $request->post('referer')
         );
 
         try {
@@ -74,6 +87,8 @@ class DiscordController extends Controller
             $mail = new MailController();
             $mail->sendApplyMail($request->post('name'), $request->post('mail'), $job->title);
         } catch (Exception $exception) {
+            return redirect()->back()->
+            with('error', 'Es ist ein Fehler aufgetreten. Wir konnten dir keine Bestätigungs E-Mail senden.');
         }
 
         return view('jobs.applied', ['title' => $job->title]);
@@ -82,7 +97,7 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendWebhook(Request $request)
+    private function sendWebhook(Request $request): void
     {
         $embed = new Embed();
         $embed->setTitle('Website Benachrichtigung 🌶️');
@@ -102,7 +117,19 @@ class DiscordController extends Controller
     /**
      * @throws Exception
      */
-    private function sendApplyWebhook($title, $about, $color, $discord, $mail, $name, $alter, $staerken, $schwaechen, $online, $knowlege, $knowing)
+    private function sendApplyWebhook($title,
+                                      $about,
+                                      $color,
+                                      $discord,
+                                      $mail,
+                                      $name,
+                                      $age,
+                                      $strengths,
+                                      $weaknesses,
+                                      $online,
+                                      $knowledge,
+                                      $referer
+    )
     {
         $embed = new Embed();
         $embed->setTitle($name.' hat sich als '.$title.' beworben');
@@ -110,12 +137,12 @@ class DiscordController extends Controller
         $embed->addField('=+= Discord', "```$discord```");
         $embed->addField('=+= E-Mail', "```$mail```");
         $embed->addField('=+= Name', "```$name```");
-        $embed->addField('=+= Alter', "```$alter```");
+        $embed->addField('=+= Alter', "```$age```");
         $embed->addField('=+= Online', "```$online```");
-        $embed->addField('=+= Stärken', "```$staerken```", false);
-        $embed->addField('=+= Schwächen', "```$schwaechen```", false);
-        $embed->addField('=+= Minecraft Java Erfahrung', "```$knowlege```", false);
-        $embed->addField('=+= Wie hast du von SkyRealmDE erfahren?', "```$knowing```", false);
+        $embed->addField('=+= Stärken', "```$strengths```", false);
+        $embed->addField('=+= Schwächen', "```$weaknesses```", false);
+        $embed->addField('=+= Minecraft Java Erfahrung', "```$knowledge```", false);
+        $embed->addField('=+= Wie hast du von SkyRealmDE erfahren?', "```$referer```", false);
         $line = 1;
         $aboutBlocks = str_split($about, 1000);
         foreach ($aboutBlocks as $block) {
