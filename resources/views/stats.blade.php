@@ -21,6 +21,9 @@
                                             <span class="px-2 py-1 text-white text-xs font-medium rounded-full" style="background-color: {{ $user->color }}">{{ $user->rank }}</span>
                                         </dd>
                                         <dd class="mt-3">
+                                            <span class="px-2 py-1 text-white text-xs font-medium rounded-full">{{ $user->prestigeLevel }} PrestigeLevel</span>
+                                        </dd>
+                                        <dd class="mt-3">
                                             <span class="px-2 py-1 text-white text-xs font-medium rounded-full">{{ $user->xp }} XP</span>
                                         </dd>
                                         <dd class="mt-3">

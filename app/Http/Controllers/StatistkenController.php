@@ -11,7 +11,7 @@ class StatistkenController extends Controller
 {
     public function index()
     {
-        $topUsers = DB::select('SELECT *, HEX(unique_id) AS uuid FROM `realm_players` WHERE `xp` > 0 ORDER BY `xp` DESC LIMIT 12');
+        $topUsers = DB::select('SELECT *, HEX(unique_id) AS uuid FROM `realm_players` WHERE `xp` > 0 ORDER BY `prestigeLevel` DESC, `xp` DESC LIMIT 12');
 
         $topUsers = array_map(function ($user) {
             // Add - to uuid
