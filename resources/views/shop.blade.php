@@ -20,7 +20,7 @@
 
 
                     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                        <div class="max-w-lg mx-auto rounded-lg overflow-hidden lg:max-w-none lg:flex">
                             <div class="flex-1 bg-gray-700 text-white px-6 py-8 lg:p-12">
                                 <h3 class="text-2xl font-extrabold sm:text-3xl">Prime Mitgliedschaft</h3>
                                 <p class="mt-6 text-base text-gray-100">Mit dem Prime Rang bist du der angesehenste Spieler auf dem Server!</p>
@@ -123,6 +123,78 @@
                                         disabled
                                     >
                                     Bald verfügbar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    <br>
+                    <br>
+                        <div class="max-w-lg mx-auto rounded-lg overflow-hidden lg:max-w-none lg:flex">
+                            <div class="flex-1 bg-gray-700 text-white px-9 py-8 lg:p-12">
+                                <h3 class="text-2xl font-extrabold sm:text-3xl">Coin Packs</h3>
+                                <p class="mt-6 text-base text-gray-100">Mit Coin Packs bekommst du ein paar extra Coins!</p>
+                                <div class="mt-8">
+                                    <div class="flex items-center">
+                                        <h4 class="flex-shrink-0 pr-4 text-sm tracking-wider font-semibold uppercase text-orange-600">Optionen:</h4>
+                                        <div class="flex-1 border-t-2 border-gray-200"></div>
+                                    </div>
+                                    <ul role="list" class="mt-8  lg:gap-x-5 lg:gap-y-4">
+                                        <li class="flex lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm">899 Coins = 0.99€</p>
+                                        </li>
+
+                                        <li class="flex  lg:col-span-1">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm">1899 Coins = 1.99€ (+100 Coins geschenkt)</p>
+                                        </li>
+                                        <li class="flex  lg:col-span-1">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm">9.490 Coins = 9.99€ (+500 Coins geschenkt)</p>
+                                        </li>
+                                        <li class="flex  ">
+                                            <div class="flex-shrink-0 mb-5">
+                                                <!-- Heroicon name: solid/check-circle -->
+                                                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="ml-3 text-sm">24.495 Coins = 24.99€ (+2020 Coins geschenkt)</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                                <p class="text-lg leading-6 font-medium text-white">Schon ab!</p>
+                                <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-white">
+                                    <span> €0.99 </span>
+                                    <span class="ml-3 text-xl font-medium text-gray-100"> EUR </span>
+                                </div>
+                                <div class="mt-6">
+                                    <button
+                                        class="w-full rounded-md shadow flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-300"
+                                        data-sellix-product="643169220cb1c"
+                                        type="submit"
+                                        alt="Jetzt kaufen"
+                                        disabled
+                                    >
+                                        Bald verfügbar
                                     </button>
                                 </div>
                             </div>
