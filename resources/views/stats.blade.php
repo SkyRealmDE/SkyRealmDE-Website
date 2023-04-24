@@ -21,7 +21,7 @@
                                             <span class="px-2 py-1 text-white text-xs font-medium rounded-full" style="background-color: {{ $user->color }}">{{ $user->rank }}</span>
                                         </dd>
                                         <dd class="mt-3">
-                                            <span class="px-2 py-1 text-white text-xs font-medium rounded-full"><i class="fa-solid fa-star"></i>{{ $user->prestigeLevel }} - {{ $user->xp }} XP</span>
+                                            <span class="px-2 py-1 text-white text-xs font-extrabold rounded-full"><span class="text-[#30ff29]">{{ getLevel($user->xp) }}</span> <span class="text-[#f1c40f]"><i class="fa-solid fa-star pr-[2px]"></i>{{ $user->prestigeLevel }}</span></span>
                                         </dd>
                                         <dd class="mt-3">
                                             <span class="px-2 py-1 text-white text-xs font-medium rounded-full">{{ $user->coins }} Coins</span>
