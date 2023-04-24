@@ -37,13 +37,13 @@
                                                 <p class="flex items-center text-sm text-white">
                                                     <i class="fa-solid fa-user-group mr-2"></i> {{ $job->branch }}
                                                 </p>
-                                                <p class="mt-2 flex items-center text-sm text-white sm:ml-5">
+                                                <p class=" flex items-center text-sm text-white sm:ml-5">
                                                     <i class="fa-solid fa-signal-stream mr-2"></i>
                                                     Remote
                                                 </p>
                                             </div>
-                                            <div class="mt-2 flex items-center text-sm text-white sm:mt-0">
-                                                <i class="fa-solid fa-calendar-days mr-2"></i>
+                                            <div class=" flex items-center text-sm text-white ">
+                                                <i class="fa-solid fa-calendar-days mr-2 mb-4 "></i>
                                                 <p>
                                                     {{ str_replace('-', '.', explode(' ', $job->created_at)[0]) }}
                                                 </p>
