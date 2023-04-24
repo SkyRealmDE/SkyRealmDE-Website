@@ -16,7 +16,8 @@ class StatistkenController extends Controller
 {
     public function index(): View|FoundationApplication|Factory|ContractApplication
     {
-        $topUsers = DB::select('
+        $topUsers = DB::select(
+            '
             SELECT *, HEX(unique_id) AS uuid
             FROM `realm_players`
             WHERE `xp` > 0
