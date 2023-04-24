@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application as FoundationApplication;
+use Illuminate\Contracts\Foundation\Application as ContractApplication;
+use Illuminate\Contracts\View\Factory;
+
 class TeamController extends Controller
 {
-    public function index()
+    public function index(): View|FoundationApplication|Factory|ContractApplication
     {
         $teamRanks = DB::selectOne('SELECT `groups` FROM luckperms_tracks WHERE `name` = "team"')->groups;
         $teamRanks = Str::replace('[', '', $teamRanks);
@@ -15,14 +20,22 @@ class TeamController extends Controller
         $teamRanks = Str::replace('"', '', $teamRanks);
         $teamRanks = explode(',', $teamRanks);
 
-        $team = DB::select('SELECT lp.uuid, sp.username, lp.primary_group FROM luckperms_players lp JOIN realm_players sp ON UNHEX(REPLACE(lp.uuid, "-", "")) = sp.unique_id WHERE lp.primary_group != "default";');
+        $team = DB::select(
+            'SELECT lp.uuid, sp.username, lp.primary_group
+            FROM luckperms_players lp JOIN realm_players sp ON UNHEX(REPLACE(lp.uuid, "-", "")) = sp.unique_id
+            WHERE lp.primary_group != "default";'
+        );
 
-        $prefixPermission = DB::select('SELECT `name`, `permission` FROM luckperms_group_permissions WHERE `permission` LIKE "prefix.%"');
+        $prefixPermission = DB::select(
+            'SELECT `name`, `permission`
+            FROM luckperms_group_permissions
+            WHERE `permission` LIKE "prefix.%"'
+        );
 
         $prefixPermission = array_map(function ($permObj) {
-            $splitted = explode('.', $permObj->permission);
-            $permObj->weight = $splitted[1];
-            preg_match('/<(?<color>#[a-f0-9]{6})>(?<rank>.*)/', $splitted[2], $matches);
+            $split = explode('.', $permObj->permission);
+            $permObj->weight = $split[1];
+            preg_match('/<(?<color>#[a-f0-9]{6})>(?<rank>.*)/', $split[2], $matches);
 
             $permObj->prefix = $matches['rank'];
             $permObj->color = $matches['color'];

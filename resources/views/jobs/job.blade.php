@@ -24,76 +24,141 @@
                             </div>
                             <div>
                                 <br>
-                                <h1 class="font-sans text-3xl" style="color: {{ $job->color }}">Bewirb dich jetzt für diese Stelle:</h1>
+                                <h1 class="font-sans text-3xl" style="color: {{ $job->color }}">
+                                    Bewirb dich jetzt für diese Stelle:
+                                </h1>
                                 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                                     <div class="sm:col-span-4">
-                                        <label for="discord" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Discord Name </label>
+                                        <label for="discord"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Discord Name </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="discord" id="discord" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <input required
+                                                   type="text"
+                                                   name="discord"
+                                                   id="discord"
+                                                   class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="mail" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> E-Mail </label>
+                                        <label for="mail"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> E-Mail </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="email" name="mail" id="mail" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <input required
+                                                   type="email"
+                                                   name="mail"
+                                                   id="mail"
+                                                   class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Name </label>
+                                        <label for="name"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Name </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="name" id="name" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <input required
+                                                   type="text"
+                                                   name="name"
+                                                   id="name"
+                                                   class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Alter </label>
+                                        <label for="age"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Alter </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="number" min="13" max="99" name="alter" id="alter" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <input required
+                                                   type="number"
+                                                   min="13"
+                                                   max="99"
+                                                   name="age"
+                                                   id="age"
+                                                   class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Stärken </label>
+                                        <label for="strengths"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Stärken </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <textarea required type="text" name="staerken" id="staerken" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
+                                            <textarea required
+                                                      type="text"
+                                                      name="strengths"
+                                                      id="strengths"
+                                                      class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
                                         </div>
                                     </div>
 
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Schwächen </label>
+                                        <label for="weaknesses"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Schwächen </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <textarea required type="text" name="schwaechen" id="schwaechen" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
+                                            <textarea required
+                                                      type="text"
+                                                      name="weaknesses"
+                                                      id="weaknesses"
+                                                      class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Ungefähre Onlinezeiten </label>
+                                        <label for="online"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Ungefähre Onlinezeiten </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="online" id="online" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <input required
+                                                   type="text"
+                                                   name="online"
+                                                   id="online"
+                                                   class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Minecraft Java Erfahrung </label>
+                                        <label for="knowledge"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Minecraft Java Erfahrung </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <textarea required type="text" name="knowlege" id="knowlege" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
+                                            <textarea required
+                                                      type="text"
+                                                      name="knowledge"
+                                                      id="knowledge"
+                                                      class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-4">
-                                        <label for="name" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Wie hast du von SkyRealmDE erfahren? </label>
+                                        <label for="referer"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"
+                                        > Wie hast du von SkyRealmDE erfahren? </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <input required type="text" name="knowing" id="knowing" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
+                                            <input required
+                                                   type="text"
+                                                   name="referer"
+                                                   id="referer"
+                                                   class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-100 bg-gray-700">
                                         </div>
                                     </div>
 
                                     <div class="sm:col-span-6">
-                                        <label for="about" class="block text-md font-black text-orange-600" style="color: {{ $job->color }}"> Über dich </label>
+                                        <label for="about"
+                                               class="block text-md font-black text-orange-600"
+                                               style="color: {{ $job->color }}"> Über dich </label>
                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                            <textarea required id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-100 bg-gray-700 rounded-md"></textarea>
+                                            <textarea required
+                                                      id="about"
+                                                      name="about"
+                                                      rows="3"
+                                                      class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-100 bg-gray-700 rounded-md"></textarea>
                                         </div>
                                         <p class="mt-2 text-sm text-gray-100">Schreibe ein paar Sätze über dich.</p>
                                     </div>
@@ -103,15 +168,25 @@
                             <div class="pt-8">
                                 <div>
                                     <h3 class="text-lg leading-6 font-medium text-gray-100">Datenschutz</h3>
-                                    <p class="mt-1 text-sm text-gray-100">Du musst noch unsere Datenschutzbedingungen akzeptieren.</p>
+                                    <p class="mt-1 text-sm text-gray-100">
+                                        Du musst noch unsere Datenschutzbedingungen akzeptieren.
+                                    </p>
                                 </div>
                                 <div class="mt-4 space-y-4">
                                     <div class="relative flex items-start">
                                         <div class="flex items-center h-5">
-                                            <input required id="privacy" name="privacy" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 bg-gray-700 text-indigo-600 border-gray-300 rounded hover:cursor-pointer">
+                                            <input required
+                                                   id="privacy"
+                                                   name="privacy"
+                                                   type="checkbox"
+                                                   class="focus:ring-indigo-500 h-4 w-4 bg-gray-700 text-indigo-600 border-gray-300 rounded hover:cursor-pointer">
                                         </div>
                                         <div class="ml-3 text-sm">
-                                            <label for="privacy" class="font-medium text-gray-100 hover:cursor-pointer">Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, dass meine Daten auf den SkyRealm Servern gespeichert werden fürfen.</label>
+                                            <label for="privacy"
+                                                   class="font-medium text-gray-100 hover:cursor-pointer"
+                                            >
+                                                Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, dass meine Daten auf den SkyRealm Servern gespeichert werden fürfen.
+                                            </label>
                                         </div>
                                     </div>
                                 </div>

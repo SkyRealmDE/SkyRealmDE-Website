@@ -7,15 +7,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application as FoundationApplication;
+use Illuminate\Contracts\Foundation\Application as ContractApplication;
+use Illuminate\Contracts\View\Factory;
+
 class StatistkenController extends Controller
 {
-    public function index()
+    public function index(): View|FoundationApplication|Factory|ContractApplication
     {
-        $topUsers = DB::select('SELECT *, HEX(unique_id) AS uuid FROM `realm_players` WHERE `xp` > 0 ORDER BY `prestigeLevel` DESC, `xp` DESC LIMIT 12');
+        $topUsers = DB::select(
+            '
+            SELECT *, HEX(unique_id) AS uuid
+            FROM `realm_players`
+            WHERE `xp` > 0
+            ORDER BY `prestigeLevel` DESC, `xp` DESC LIMIT 12'
+        );
 
         $topUsers = array_map(function ($user) {
             // Add - to uuid
-            $user->formattedUUID = substr($user->uuid, 0, 8).'-'.substr($user->uuid, 8, 4).'-'.substr($user->uuid, 12, 4).'-'.substr($user->uuid, 16, 4).'-'.substr($user->uuid, 20, 12);
+            $user->formattedUUID =
+                substr($user->uuid, 0, 8).'-'.
+                substr($user->uuid, 8, 4).'-'.
+                substr($user->uuid, 12, 4).'-'.
+                substr($user->uuid, 16, 4).'-'.
+                substr($user->uuid, 20, 12);
             $userLP = DB::selectOne('SELECT * FROM luckperms_players WHERE `uuid` = ?', [$user->formattedUUID]);
             $user->rank = match ($userLP->primary_group) {
                 'webdev' => 'Web-Dev',
@@ -24,7 +40,12 @@ class StatistkenController extends Controller
             };
             $user->name = $user->username;
 
-            $prefixPermission = DB::selectOne('SELECT `name`, `permission` FROM luckperms_group_permissions WHERE `permission` LIKE "prefix.%" AND `name` = ?', [$userLP->primary_group]);
+            $prefixPermission = DB::selectOne(
+                'SELECT `name`, `permission`
+                FROM luckperms_group_permissions
+                WHERE `permission` LIKE "prefix.%" AND `name` = ?',
+                [$userLP->primary_group]
+            );
             $splitted = explode('.', $prefixPermission->permission);
             preg_match('/<(?<color>#[a-f0-9]{6})>(?<rank>.*)/', $splitted[2], $matches);
             $user->prefix = $matches['rank'];
@@ -38,7 +59,7 @@ class StatistkenController extends Controller
         return view('stats', ['topUsers' => $topUsers]);
     }
 
-    public function userStats(Request $request, string $uuid)
+    public function userStats(Request $request, string $uuid): View|FoundationApplication|Factory|ContractApplication
     {
         $userLP = DB::selectOne('SELECT * FROM luckperms_players WHERE `uuid` = ?', [$uuid]);
         $uuidAsUUID = str_replace('-', '', $uuid);

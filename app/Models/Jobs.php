@@ -20,7 +20,7 @@ class Jobs extends Model
         'color',
     ];
 
-    public function getTagsAttribute()
+    public function getTagsAttribute(): array
     {
         return explode(':', $this->attributes['tags']);
     }
