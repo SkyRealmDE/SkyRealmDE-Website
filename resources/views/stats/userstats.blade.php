@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
                                             <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-100">XP</dt>
-                                            <dd class="order-1 text-5xl font-extrabold text-orange-600">{{ $user->xp }}</dd>
+                                            <dd class="order-1 text-5xl font-extrabold text-orange-600"><i class="fa-solid fa-star"></i>{{ $user->prestigeLevel }}</dd><dd class="order-1 text-5xl font-extrabold text-orange-600">{{ $user->xp }}</dd>
                                         </div>
                                     </dl>
                                 </div>

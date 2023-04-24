@@ -7,16 +7,18 @@ Auch diesen Sonntag gibt es wieder eine handvoll Updates.
 ## Features
 
 #### Ingame
+
 -   Mit `/coinpaper <anzahl>` könnt ihr eure Coins auf Papier übertragen
 -   Als Level 150 Belohnung wurde ein Drachenkopf hinzugefügt
 -   Der Befehl `/fix` wurde hinzugefügt. (Der Preis beträgt 1 Coin pro Damagepunkt)
 -   Mit `/feed` könnt ihr euch für gerade einmal 20 Coins durchfüttern lassen
 -   **Spezialgeneratoren** sind nun craftbar. (siehe unten)
--   Neue RealmPermission hinzugefügt: `FLY` (*Bestehende Realms müssen diese erst aktivieren*)
+-   Neue RealmPermission hinzugefügt: `FLY` (_Bestehende Realms müssen diese erst aktivieren_)
 -   Neues RealmSetting hinzugefügt: `Fly kaufen` (einmaliger Kauf, oder für die Dauer des Prime Rangs)
 -   RealmFly hinzugefügt
 
 #### Website
+
 -   Job Übersicht überarbeitet
 -   Neue Felder zur Bewerbung hinzugefügt
 -   Längere ÜberMich Beschreibungen sind nun möglich. (Alle anderen Felder bis zu 1000 Zeichen)
