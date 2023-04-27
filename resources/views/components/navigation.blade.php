@@ -46,6 +46,8 @@
 
                             <a href="/changelogs"
                                class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Changelogs</a>
+                            <a href="/guides"
+                               class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Guides</a>
                         </div>
                         <div>
                             <a href="https://discord.gg/skyrealm" target="_blank"
